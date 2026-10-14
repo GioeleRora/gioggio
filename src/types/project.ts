@@ -1,8 +1,10 @@
 export type ProjectCategory =
+  | "edge-ai"
+  | "simulation"
   | "web-app"
+  | "embedded"
   | "api-backend"
   | "dashboard"
-  | "mobile"
   | "tool";
 
 export interface MetricCardData {

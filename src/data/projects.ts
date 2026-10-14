@@ -2,152 +2,140 @@ import { ProjectItem } from "@/types/project";
 
 export const projectsData: ProjectItem[] = [
   {
-    slug: "nexus-analytics",
-    title: "Nexus Cloud & Real-time Analytics",
+    slug: "egg-edge-ai",
+    title: "EGG – Edge-AI Traffic Mesh Network",
     summary:
-      "Piattaforma di telemetria e monitoraggio per applicazioni distribuite con dashboard analitica in tempo reale e allarmi intelligenti.",
+      "Nodo Edge-AI a basso costo (~€100) per il monitoraggio del traffico urbano in tempo reale che sostituisce sensori proprietari da €15k+, premiato al 1° posto a HackTurin.",
     fullDescription:
-      "Nexus Analytics è una piattaforma completa per aggregare log, metriche di performance e telemetria di sistemi distribuiti. Fornisce viste sintetiche per i team di ingegneria, evidenziando colli di bottiglia, tempi di risposta e throughput in tempo reale.",
-    category: "dashboard",
-    categoryLabel: "Analytics & Dashboard",
+      "Progetto vincitore del 1° posto ad HackTurin. EGG è una rete mesh di nodi Edge-AI distribuita per il monitoraggio intelligente del traffico urbano. Combina elaborazione neurale a bordo camera (YOLOX-nano) e architettura firmware dual-core per garantire massima reattività, basso consumo ed elevata conformità GDPR (nessun flusso video grezzo trasmesso).",
+    category: "edge-ai",
+    categoryLabel: "Edge-AI & Embedded",
     featured: true,
     order: 1,
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Recharts", "PostgreSQL"],
-    liveUrl: "https://demo.nexus-analytics.example.com",
-    repoUrl: "https://github.com/gioele/nexus-analytics",
+    tags: [
+      "Zephyr RTOS",
+      "C++",
+      "Python",
+      "Linux (Debian)",
+      "Docker",
+      "Arduino UNO Q",
+      "YOLOX-nano",
+      "SQLite",
+      "RPC",
+    ],
     architectureHighlights: [
-      "Architettura ibrida Server/Client Components per un primo rendering istantaneo",
-      "Elaborazione delle metriche con aggiornamento incrementale ogni 5 secondi",
-      "Isolamento delle query analitiche pesanti per non impattare le prestazioni delle transazioni",
-      "Design System scuro con palette ciano ed emerald per massima leggibilità dei grafici",
+      "Guidato il team al 1° posto ad HackTurin e ingegnerizzato il case hardware in stampa 3D; co-architettato un nodo edge-AI da ~€100 per rimpiazzare sensori proprietari da oltre €15k.",
+      "Architettato firmware dual-core su Arduino UNO Q: offloaded del sensing real-time I2C e timer traffico su Zephyr RTOS (C++), interfacciato a Debian/Docker via RPC con latenza inferiore a 7ms.",
+      "Integrata inferenza locale YOLOX-nano con modulo camera 8MP IMX219 per tracciamento anonimo GDPR-compliant e inoltro di alert pedoni e collisioni a una mappa web 3D live.",
     ],
     challengesAndSolutions: [
       {
-        challenge: "Rendering fluido di flussi di dati ad alta frequenza senza freeze dell'interfaccia.",
-        solution: "Adozione di memoizzazione granulare in React e throttling sul flusso di campionamento dati.",
+        challenge:
+          "Eseguire modelli di computer vision in tempo reale su micro-hardware edge a basso costo mantenendo la determinazione temporale.",
+        solution:
+          "Separazione architetturale dual-core: task temporali critici e gestione dei sensori I2C isolati su Zephyr RTOS in C++, con bridge RPC verso l'ambiente Debian containerizzato su Docker.",
       },
       {
-        challenge: "Mantenere bassi i consumi energetici su dispositivi mobili pur visualizzando grafici SVG complessi.",
-        solution: "Ottimizzazione del numero di nodi DOM renderizzati tramite virtualizzazione degli assi e campionamento aggregato.",
+        challenge:
+          "Garantire il rispetto rigoroso della privacy GDPR nel monitoraggio di strade pubbliche.",
+        solution:
+          "Elaborazione edge 100% locale: i fotogrammi della videocamera non vengono mai salvati né trasmessi in rete, convertendosi immediatamente in metadati vettoriali e statistiche anonimizzate.",
       },
     ],
     dashboard: {
-      title: "Nexus Telemetry Live Monitor",
-      description: "Metriche di sistema aggregate nelle ultime 24 ore.",
+      title: "EGG Telemetry & Sensor Mesh Feed",
+      description: "Metriche di elaborazione edge e latenza RPC del nodo Arduino UNO Q.",
       kpis: [
-        { label: "Throughput Richieste", value: "24.8k / min", change: "+14.2%", isPositive: true },
-        { label: "Tempo di Risposta Medio", value: "48 ms", change: "-6.5%", isPositive: true },
-        { label: "Uptime Globale", value: "99.98%", change: "+0.02%", isPositive: true },
-        { label: "Error Rate (5xx)", value: "0.012%", change: "-0.004%", isPositive: true },
+        { label: "Latenza Bridge RPC", value: "< 7 ms", change: "Sub-10ms target", isPositive: true },
+        { label: "Costo Hardware Nodo", value: "~€100", change: "-99% vs €15k sensori", isPositive: true },
+        { label: "Modello Neurale", value: "YOLOX-nano", change: "8MP IMX219", isPositive: true },
+        { label: "Privacy Status", value: "100% GDPR", change: "Zero video streamed", isPositive: true },
       ],
       chartData: [
-        { date: "00:00", value: 120, secondaryValue: 42 },
-        { date: "04:00", value: 85, secondaryValue: 38 },
-        { date: "08:00", value: 240, secondaryValue: 52 },
-        { date: "12:00", value: 310, secondaryValue: 49 },
-        { date: "16:00", value: 290, secondaryValue: 46 },
-        { date: "20:00", value: 220, secondaryValue: 44 },
-        { date: "23:59", value: 160, secondaryValue: 41 },
+        { date: "00:00", value: 14, secondaryValue: 5 },
+        { date: "04:00", value: 6, secondaryValue: 6 },
+        { date: "08:00", value: 142, secondaryValue: 7 },
+        { date: "12:00", value: 189, secondaryValue: 6 },
+        { date: "16:00", value: 175, secondaryValue: 6 },
+        { date: "20:00", value: 98, secondaryValue: 5 },
+        { date: "23:59", value: 28, secondaryValue: 5 },
       ],
       recentLogs: [
-        { timestamp: "14:52:10", action: "Cluster node eu-central-1 autoscaled to 4 replicas", status: "success" },
-        { timestamp: "14:48:32", action: "Database connection pool refreshed (latency: 1.2ms)", status: "info" },
-        { timestamp: "14:35:19", action: "High traffic spike detected on endpoint /api/v1/metrics", status: "warning" },
-        { timestamp: "14:20:05", action: "Backup incremental snapshot completed", status: "success" },
+        { timestamp: "16:12:04", action: "Zephyr RTOS I2C sensor bus sync completed (latency: 4.8ms)", status: "success" },
+        { timestamp: "16:11:45", action: "YOLOX-nano frame inferenced: 4 vehicles, 2 pedestrians detected", status: "info" },
+        { timestamp: "16:10:12", action: "RPC message dispatched to Docker bridge endpoint", status: "success" },
+        { timestamp: "16:08:50", action: "Live 3D web map alert telemetry refreshed", status: "info" },
       ],
     },
   },
   {
-    slug: "hyper-commerce",
-    title: "HyperCommerce Headless Storefront",
+    slug: "drone-delivery-simulator",
+    title: "Drone Delivery Simulator – 3D Aerodynamics & Systems Game",
     summary:
-      "E-commerce ad altissime prestazioni con architettura headless, checkout ultra-rapido e Lighthouse score 100/100.",
+      "Simulatore di volo fisico in Unity con calcolo dell'aerodinamica in tempo reale, variazione dinamica della massa del carico e consumo della batteria.",
     fullDescription:
-      "Una soluzione e-commerce progettata specificamente per massimizzare il tasso di conversione grazie a tempi di caricamento inferiori a 300ms, transizioni di pagina istantanee e una gestione del carrello completamente persistente e reattiva.",
-    category: "web-app",
-    categoryLabel: "Web Application",
+      "Simulatore di volo e sistemi dinamici ingegnerizzato in Unity con motore fisico 3D personalizzato. Modella il comportamento aerodinamico del multirotore considerando lo spostamento del centro di massa con carico utile, coefficienti di drag variabili e scarica realistica della batteria.",
+    category: "simulation",
+    categoryLabel: "3D Physics & Simulation",
     featured: true,
     order: 2,
-    tags: ["Next.js 16", "TypeScript", "Tailwind CSS", "Stripe API", "Zustand"],
-    liveUrl: "https://hypercommerce.example.com",
-    repoUrl: "https://github.com/gioele/hypercommerce",
+    tags: [
+      "Unity",
+      "C#",
+      "3D Physics Engine",
+      "HLSL / Shader Graph",
+      "Git",
+    ],
     architectureHighlights: [
-      "Rigenerazione statica incrementale (ISR) per il catalogo prodotti con zero attese per gli utenti",
-      "Integrazione sicura con Stripe Checkout e webhooks asincroni",
-      "Stato del carrello salvato su local storage con sincronizzazione serverless ottimistica",
+      "Ingegnerizzato simulatore di volo in Unity con calcolo in tempo reale di spostamento della massa del carico, aerodinamica e consumo dinamico della batteria.",
+      "Architettata pipeline procedurale per generare missioni combinate a logica a stati e meccaniche di progressione per esplorazione verticale.",
+      "Progettato framework di input analogico per gamepad a bassissima latenza e caricamento continuo dei livelli tramite shader glassmorphism in HLSL.",
     ],
     challengesAndSolutions: [
       {
-        challenge: "Evitare il layout shift durante il caricamento dinamico delle immagini ad alta risoluzione.",
-        solution: "Utilizzo di Next/Image con placeholder sfocati (blur data URL) e aspect-ratio rigorosi.",
+        challenge:
+          "Simulare fedelmente le variazioni di manovrabilità al variare del carico utile agganciato al drone.",
+        solution:
+          "Ricalcolo dinamico a ogni frame del tensore d'inerzia e del centro di massa nel rigid body di Unity.",
+      },
+      {
+        challenge:
+          "Garantire un framerate elevato e stabile senza stuttering durante la transizione tra aree di gioco complesse.",
+        solution:
+          "Streaming asincrono dei livelli e shader ottimizzati con Shader Graph e HLSL dedicati.",
       },
     ],
-    dashboard: {
-      title: "Store Performance & Conversions",
-      description: "Metriche e volume transazioni dell'ambiente demo.",
-      kpis: [
-        { label: "Conversione Checkout", value: "4.85%", change: "+0.8%", isPositive: true },
-        { label: "Carrello Medio", value: "€ 84.50", change: "+12%", isPositive: true },
-        { label: "First Contentful Paint", value: "0.4s", change: "Top 1%", isPositive: true },
-        { label: "Ordini Processati (oggi)", value: "342", change: "+28", isPositive: true },
-      ],
-      chartData: [
-        { date: "Lun", value: 45, secondaryValue: 3200 },
-        { date: "Mar", value: 52, secondaryValue: 3900 },
-        { date: "Mer", value: 49, secondaryValue: 3600 },
-        { date: "Gio", value: 68, secondaryValue: 4800 },
-        { date: "Ven", value: 85, secondaryValue: 6100 },
-        { date: "Sab", value: 92, secondaryValue: 7200 },
-        { date: "Dom", value: 74, secondaryValue: 5400 },
-      ],
-    },
   },
   {
-    slug: "core-api-gateway",
-    title: "Edge API Gateway & Microservices Hub",
+    slug: "route-2025",
+    title: "Route 2025 – Full-Stack Event Logistics Platform",
     summary:
-      "Gateway API distribuito con rate limiting distribuito, validazione schema runtime e caching multilivello.",
+      "Piattaforma centralizzata per la logistica di eventi Scout con tracking delle presenze in tempo reale e sincronizzazione per oltre 30 partecipanti contemporanei.",
     fullDescription:
-      "Hub per microservizi che gestisce l'autenticazione tramite JWT con rotazione delle chiavi, routing dinamico e monitoraggio centralizzato delle anomalie per servizi eterogenei.",
-    category: "api-backend",
-    categoryLabel: "Backend & API",
+      "Piattaforma web modulare progettata e implementata per la gestione logistica e il coordinamento sul campo di eventi Scout. Centralizza il monitoraggio delle presenze live, la gestione degli itinerari e la condivisione istantanea delle tappe tra gruppi regionali diversi.",
+    category: "web-app",
+    categoryLabel: "Full-Stack Web App",
     featured: true,
     order: 3,
-    tags: ["Node.js", "TypeScript", "Redis", "Docker", "JWT"],
-    repoUrl: "https://github.com/gioele/core-api-gateway",
+    tags: [
+      "Node.js",
+      "JavaScript (ES6+)",
+      "HTML5/CSS3",
+      "Vercel",
+      "Git CI/CD",
+    ],
+    liveUrl: "https://route2025.vercel.app",
     architectureHighlights: [
-      "Rate-limiting token bucket basato su Redis distribuito",
-      "Validazione rigorosa del payload con schema Zod a runtime",
-      "Struttura a middleware componibili con gestione centralizzata delle eccezioni",
+      "Architettata una piattaforma centralizzata per la logistica di eventi Scout, ottimizzando il tracking delle presenze live e il coordinamento tra molteplici gruppi regionali.",
+      "Implementati endpoint REST modulari e una dashboard responsive per sincronizzare lo stato live tra oltre 30 partecipanti contemporanei.",
+      "Mantenuta pipeline di deployment su Vercel con integrazione continua automatizzata e branch protection su GitHub.",
     ],
     challengesAndSolutions: [
       {
-        challenge: "Prevenire attacchi DDoS e abusi di richieste concorrenti senza penalizzare gli utenti legittimi.",
-        solution: "Algoritmo sliding window su Redis con latenza di verifica sub-millisecondo.",
-      },
-    ],
-  },
-  {
-    slug: "dev-matrix-cli",
-    title: "DevMatrix CLI Automation Suite",
-    summary:
-      "Strumento a riga di comando per velocizzare lo scaffolding, l'analisi del codice e il deployment di progetti web moderni.",
-    fullDescription:
-      "Un toolkit CLI sviluppato per sviluppatori per ridurre i tempi di configurazione iniziale di nuovi progetti, standardizzare le configurazioni di linting, commit convenzionali e pipeline di build.",
-    category: "tool",
-    categoryLabel: "Developer Tooling",
-    featured: false,
-    order: 4,
-    tags: ["TypeScript", "Node.js", "Commander.js", "Chalk", "GitHub Actions"],
-    repoUrl: "https://github.com/gioele/devmatrix-cli",
-    architectureHighlights: [
-      "Architettura a plugin modulari per estendere i comandi",
-      "Supporto a template personalizzati con sincronizzazione remota",
-    ],
-    challengesAndSolutions: [
-      {
-        challenge: "Garantire l'esecuzione cross-platform su Windows, macOS e Linux con gestione unificata dei percorsi.",
-        solution: "Normalizzazione dei path con Node.js path standard e gestione accurata dei ritorni a capo (CRLF vs LF).",
+        challenge:
+          "Assicurare reattività e fruibilità del servizio anche con connettività mobile limitata durante le uscite all'aperto.",
+        solution:
+          "Interfaccia responsive ultra-leggera senza bundle pesanti e hosting su edge network Vercel per tempi di caricamento minimi.",
       },
     ],
   },

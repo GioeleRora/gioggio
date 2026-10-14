@@ -2,56 +2,57 @@ import { ProfileData } from "@/types/profile";
 
 export const profileData: ProfileData = {
   name: "Gioele",
-  surname: "Dev",
-  role: "Full-Stack Developer & Software Engineer",
-  headline: "Progetto e sviluppo applicazioni web scalabili, architetture cloud e interfacce moderne ad alte prestazioni.",
+  surname: "Rora",
+  role: "Computer Engineering Student @ Politecnico di Torino",
+  headline:
+    "Studente di Ingegneria Informatica al Politecnico di Torino (corso interamente in lingua inglese) e membro dell'IEEE-HKN Honor Society. Sviluppo firmware embedded, algoritmi, sistemi Edge-AI e piattaforme web moderne.",
   statusBadge: {
-    text: "Disponibile per nuovi progetti & opportunità",
+    text: "Aperto a opportunità di stage & progetti",
     available: true,
   },
   shortBio:
-    "Sviluppatore con una forte passione per l'ingegneria del software moderna, architetture performanti e interfacce utente curate nel dettaglio visivo e prestazionale.",
+    "Appassionato di ingegneria dei sistemi embedded, robotica aerospaziale, quantum computing e sviluppo software ad alte prestazioni.",
   fullBio: [
-    "Benvenuto nel mio spazio digitale. Sono uno sviluppatore specializzato nell'ecosistema JavaScript/TypeScript, con un focus particolare su Next.js, React e architetture cloud moderne.",
-    "Mi dedico alla costruzione di software solido, dal design system dell'interfaccia utente fino all'ottimizzazione del backend e dei database.",
-    "Credo nell'approccio artigianale al codice: pulizia, tipizzazione rigorosa, testabilità e un'esperienza utente veloce, accessibile e memorabile.",
+    "Sono uno studente di Computer Engineering al Politecnico di Torino, con un percorso accademico svolto interamente in lingua inglese e riconosciuto dall'IEEE-Eta Kappa Nu (IEEE-HKN) Honor Society.",
+    "Faccio parte dei team studenteschi d'eccellenza del Politecnico: Team Astra (Divisione IT per lo sviluppo di firmware embedded di un rover lunare sferico autonomo) e Team QubiTo (Software & Algorithms Division per quantum computing).",
+    "Ho vinto il 1° posto ad HackTurin con il progetto EGG (Edge-AI Traffic Mesh Network) e mi dedico costantemente a progetti tecnici complessi, spaziando da sistemi real-time con Zephyr RTOS e C/C++ a simulatori fisici 3D in Unity e piattaforme full-stack.",
   ],
-  location: "Italia",
-  email: "gioele.contact@example.com",
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
+  location: "Torino, Italia",
+  email: "gioelerora05@gmail.com",
+  github: "https://github.com/GioeleRora",
+  linkedin: "https://www.linkedin.com/in/gioelerora",
   socials: [
     {
       label: "GitHub",
-      url: "https://github.com",
+      url: "https://github.com/GioeleRora",
       iconName: "Github",
     },
     {
       label: "LinkedIn",
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/gioelerora",
       iconName: "Linkedin",
     },
     {
       label: "Email",
-      url: "mailto:gioele.contact@example.com",
+      url: "mailto:gioelerora05@gmail.com",
       iconName: "Mail",
     },
   ],
   highlights: [
     {
-      number: "3+",
-      label: "Anni di Sviluppo Attivo",
-      description: "Esperienza diretta su progetti full-stack complessi",
+      number: "PoliTo",
+      label: "B.Sc. Computer Engineering (in English)",
+      description: "Politecnico di Torino",
     },
     {
-      number: "15+",
-      label: "Progetti Realizzati",
-      description: "Tra web application, API e strumenti open-source",
+      number: "IEEE-HKN",
+      label: "IEEE Honor Society Member",
+      description: "Mu Nu Chapter",
     },
     {
-      number: "99%",
-      label: "Focus su Performance & UX",
-      description: "Lighthouse score medio e pulizia architetturale",
+      number: "1° Posto",
+      label: "@ HackTurin",
+      description: "Progetto EGG Edge-AI",
     },
   ],
 };
