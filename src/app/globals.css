@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #08090d;
+  --color-dark-surface: #0e121a;
+  --color-dark-card: #131926;
+  --color-dark-card-hover: #182030;
+  --color-neon-cyan: #00f5ff;
+  --color-neon-emerald: #10b981;
+  --color-neon-purple: #8b5cf6;
+  --color-tech-border: rgba(255, 255, 255, 0.08);
+  --color-tech-border-hover: rgba(0, 245, 255, 0.35);
+  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+:root {
+  --background: #08090d;
+  --foreground: #f1f5f9;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Background grid subtile */
+.tech-grid-bg {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Bento card glassmorphism style */
+.bento-card {
+  background-color: rgba(14, 18, 26, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card:hover {
+  border-color: rgba(0, 245, 255, 0.3);
+  box-shadow: 0 0 25px -5px rgba(0, 245, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #08090d;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
