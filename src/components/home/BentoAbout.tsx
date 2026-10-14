@@ -39,13 +39,13 @@ export function BentoAbout() {
           <div className="mt-6 pt-6 border-t border-white/[0.06] flex flex-wrap gap-2">
             <span className="text-xs font-mono text-zinc-400 self-center mr-2">Core Pillars:</span>
             <span className="px-2.5 py-1 rounded-md bg-zinc-800/80 text-xs font-mono text-cyan-300">
-              Embedded C/C++ & RTOS
+              Embedded C/C++ & Microcontrollers
             </span>
             <span className="px-2.5 py-1 rounded-md bg-zinc-800/80 text-xs font-mono text-emerald-300">
-              Edge-AI & Computer Vision
+              Agentic AI & Architecture
             </span>
             <span className="px-2.5 py-1 rounded-md bg-zinc-800/80 text-xs font-mono text-purple-300">
-              Quantum Algorithms
+              Edge-AI & Simulation
             </span>
           </div>
         </div>
@@ -65,11 +65,11 @@ export function BentoAbout() {
             <ul className="space-y-2.5 text-xs font-mono text-zinc-400">
               <li className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                <span>Real-Time Firmware with Zephyr RTOS</span>
+                <span>Real-Time Embedded C/C++ Firmware</span>
               </li>
               <li className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                <span>Quantum Circuit Simulation Benchmarks</span>
+                <span>Agentic AI Workflows & Systems Architecture</span>
               </li>
               <li className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
@@ -77,7 +77,7 @@ export function BentoAbout() {
               </li>
               <li className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                <span>3D Physics & Custom HLSL Shaders</span>
+                <span>3D Physics & Simulation Engines</span>
               </li>
             </ul>
           </div>
@@ -101,7 +101,7 @@ export function BentoAbout() {
             Technologies utilized across engineering projects and research:
           </p>
           <div className="flex flex-wrap gap-2">
-            {["C", "C++", "C#", "Python", "Linux (Debian)", "Zephyr RTOS", "STM32", "Docker", "Unity", "Node.js"].map(
+            {["C", "C++", "C#", "Python", "Linux", "STM32", "Docker", "Agentic AI", "Unity", "Node.js"].map(
               (tech) => (
                 <span
                   key={tech}

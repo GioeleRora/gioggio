@@ -19,13 +19,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Gioele Rora | Computer Engineering & Embedded Systems",
   description:
-    "Portfolio personale di Gioele Rora: studente di Ingegneria Informatica al Politecnico di Torino, membro IEEE-HKN, firmware embedded, Edge-AI e simulazioni.",
+    "Personal engineering portfolio of Gioele Rora: B.Sc. Computer Engineering student at Politecnico di Torino, IEEE-HKN member, embedded systems, Agentic AI architecture, and simulation platforms.",
   keywords: [
     "Gioele Rora",
     "Politecnico di Torino",
     "Computer Engineering",
     "Embedded Systems",
-    "Zephyr RTOS",
+    "Agentic AI",
     "C++",
     "Edge-AI",
     "HackTurin",

@@ -19,12 +19,11 @@ export const skillGroups: SkillGroup[] = [
   {
     id: "devops-cloud",
     title: "Systems & Embedded",
-    description: "Real-time embedded firmware, microcontroller architectures, and Linux environments.",
+    description: "Microcontroller architectures, real-time sensing, edge computing, and Linux environments.",
     skills: [
-      { name: "Zephyr RTOS", category: "devops-cloud", level: "Avanzato", highlight: true },
-      { name: "Linux (Debian, CLI)", category: "devops-cloud", level: "Avanzato", highlight: true },
       { name: "STM32 Microcontrollers", category: "devops-cloud", level: "Intermedio", highlight: true },
       { name: "Arduino (UNO Q)", category: "devops-cloud", level: "Avanzato", highlight: true },
+      { name: "Linux (Debian, CLI)", category: "devops-cloud", level: "Avanzato", highlight: true },
       { name: "Edge-AI & YOLOX-nano", category: "devops-cloud", level: "Avanzato", highlight: true },
       { name: "Docker", category: "devops-cloud", level: "Intermedio" },
       { name: "I2C / SPI Communication", category: "devops-cloud", level: "Avanzato" },
@@ -33,9 +32,11 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     id: "tools-methodologies",
-    title: "Tools, Frameworks & Simulation",
-    description: "3D physics engines, version control workflows, and CI/CD deployment pipelines.",
+    title: "Tools, AI & Architecture",
+    description: "Agentic AI orchestration, 3D physics engines, version control, and modern workflows.",
     skills: [
+      { name: "Agentic AI Architecture & Management", category: "tools-methodologies", level: "Avanzato", highlight: true },
+      { name: "Deep Agentic AI Workflows", category: "tools-methodologies", level: "Avanzato", highlight: true },
       { name: "Unity Engine (3D Physics)", category: "tools-methodologies", level: "Avanzato", highlight: true },
       { name: "Node.js", category: "tools-methodologies", level: "Avanzato", highlight: true },
       { name: "Git & GitHub Actions", category: "tools-methodologies", level: "Avanzato", highlight: true },
