@@ -1,39 +1,33 @@
-import { Briefcase, ArrowRight, Download } from "lucide-react";
+import { Briefcase, GraduationCap, Download, Users, HeartHandshake } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { cvData } from "@/data/cv";
 
 export function ExperienceTimeline() {
   return (
-    <section className="py-24 px-4 sm:px-6 max-w-6xl mx-auto border-t border-white/[0.06]">
+    <section id="experience" className="py-24 px-4 sm:px-6 max-w-5xl mx-auto border-t border-white/[0.06]">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
         <div>
           <Badge variant="purple" size="sm" className="mb-3">
-            {"// 04. Percorso & Esperienze"}
+            {"// 04. Experience & Education"}
           </Badge>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-            Carriera & Percorso Accademico
+            Engineering Teams & Background
           </h2>
           <p className="text-zinc-400 mt-2 max-w-xl text-sm sm:text-base">
-            Le tappe principali che hanno forgiato il mio background professionale.
+            Student space robotics, quantum algorithms research, academics at Politecnico di Torino, and leadership.
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
-          <Button href="/cv-gioele.pdf" external download variant="outline" size="md">
-            <Download className="w-4 h-4 text-cyan-400" />
-            <span>Scarica PDF</span>
-          </Button>
-
-          <Button href="/cv" variant="secondary" size="md">
-            <span>Curriculum Completo</span>
-            <ArrowRight className="w-4 h-4" />
-          </Button>
-        </div>
+        {/* Single clean PDF button */}
+        <Button href="/cv-gioele.pdf" external download variant="outline" size="md">
+          <Download className="w-4 h-4 text-cyan-400" />
+          <span>Download Resume (PDF)</span>
+        </Button>
       </div>
 
-      {/* Timeline List */}
+      {/* Experience List */}
       <div className="space-y-6">
         {cvData.workExperiences.map((exp, index) => (
           <div
@@ -42,7 +36,13 @@ export function ExperienceTimeline() {
           >
             <div className="flex items-start gap-4">
               <div className="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 shrink-0 mt-1">
-                <Briefcase className="w-5 h-5" />
+                {exp.role.includes("Scout") ? (
+                  <Users className="w-5 h-5 text-purple-400" />
+                ) : exp.role.includes("Volunteer") ? (
+                  <HeartHandshake className="w-5 h-5 text-emerald-400" />
+                ) : (
+                  <Briefcase className="w-5 h-5" />
+                )}
               </div>
               <div>
                 <div className="flex flex-wrap items-center gap-2 mb-1">
@@ -51,7 +51,7 @@ export function ExperienceTimeline() {
                   <span className="text-cyan-400 font-semibold">{exp.company}</span>
                   {exp.current && (
                     <span className="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[11px] font-mono">
-                      In corso
+                      Present
                     </span>
                   )}
                 </div>
@@ -89,6 +89,27 @@ export function ExperienceTimeline() {
             </div>
           </div>
         ))}
+
+        {/* Education Section embedded directly - No extra page hops */}
+        <div className="pt-6">
+          <h3 className="text-sm font-mono uppercase tracking-wider text-purple-400 font-semibold mb-4 flex items-center gap-2">
+            <GraduationCap className="w-4 h-4" />
+            <span>Academic Education & Honors</span>
+          </h3>
+
+          <div className="space-y-4">
+            {cvData.education.map((edu, index) => (
+              <div key={index} className="bento-card rounded-2xl p-6">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
+                  <h4 className="text-base font-bold text-white">{edu.degree}</h4>
+                  <span className="text-xs font-mono text-zinc-400">{edu.period}</span>
+                </div>
+                <span className="text-xs font-mono text-cyan-400 block mb-2">{edu.institution}</span>
+                {edu.description && <p className="text-xs text-zinc-300 leading-relaxed">{edu.description}</p>}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -4,22 +4,22 @@ import { Sparkles } from "lucide-react";
 
 export function TechStackGrid() {
   return (
-    <section id="skills" className="py-24 px-4 sm:px-6 max-w-6xl mx-auto border-t border-white/[0.06]">
+    <section id="skills" className="py-24 px-4 sm:px-6 max-w-5xl mx-auto border-t border-white/[0.06]">
       {/* Section Header */}
       <div className="mb-12">
         <Badge variant="emerald" size="sm" className="mb-3">
-          {"// 02. Competenze Tecniche"}
+          {"// 02. Technical Skills"}
         </Badge>
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-          Stack Tecnologico & Competenze
+          Skills & Technical Proficiencies
         </h2>
         <p className="text-zinc-400 mt-2 max-w-xl text-sm sm:text-base">
-          Le tecnologie e metodologie che utilizzo per costruire sistemi moderni e performanti.
+          Tools, languages, and frameworks utilized across embedded engineering, 3D simulations, and software platforms.
         </p>
       </div>
 
       {/* Grid of Categories */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {skillGroups.map((group) => (
           <div
             key={group.id}
@@ -54,8 +54,8 @@ export function TechStackGrid() {
             </div>
 
             <div className="mt-6 pt-4 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-zinc-500">
-              <span>{group.skills.length} tecnologie</span>
-              <span className="text-zinc-400">Verificato</span>
+              <span>{group.skills.length} competencies</span>
+              <span className="text-zinc-400">Verified</span>
             </div>
           </div>
         ))}
