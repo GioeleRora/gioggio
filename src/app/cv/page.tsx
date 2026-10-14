@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { Download, Briefcase, GraduationCap, Award, Globe, Mail, MapPin } from "lucide-react";
+import Link from "next/link";
+import { Download, Briefcase, GraduationCap, Award, Globe, Mail, MapPin, ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { cvData } from "@/data/cv";
@@ -9,12 +10,23 @@ import { CvPrintButton } from "@/components/cv/CvPrintButton";
 export const metadata: Metadata = {
   title: "Curriculum Vitae | Gioele Rora",
   description:
-    "Curriculum vitae di Gioele Rora: B.Sc. Computer Engineering @ Politecnico di Torino, IEEE-HKN, Team Astra e Team QubiTo.",
+    "Curriculum Vitae of Gioele Rora: B.Sc. Computer Engineering @ Politecnico di Torino, IEEE-HKN, Team Astra and Team QubiTo.",
 };
 
 export default function CvPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+      {/* Back button */}
+      <div className="mb-8">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-cyan-400 transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          <span>Back to Portfolio Overview</span>
+        </Link>
+      </div>
+
       {/* Top Action Bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10 pb-6 border-b border-white/[0.08]">
         <div>
@@ -31,7 +43,7 @@ export default function CvPage() {
         <div className="flex flex-wrap items-center gap-2.5">
           <Button href={cvData.pdfDownloadUrl} external download size="md" variant="primary">
             <Download className="w-4 h-4" />
-            <span>Scarica PDF</span>
+            <span>Download PDF</span>
           </Button>
 
           <CvPrintButton />
@@ -53,7 +65,7 @@ export default function CvPage() {
         <div className="flex items-center gap-2">
           <Globe className="w-4 h-4 text-purple-400" />
           <a href={profileData.github} target="_blank" rel="noopener noreferrer" className="hover:underline">
-            github.com/gioele
+            github.com/GioeleRora
           </a>
         </div>
       </div>
@@ -61,7 +73,7 @@ export default function CvPage() {
       {/* Professional Summary */}
       <section className="mb-12">
         <h2 className="text-sm font-mono uppercase tracking-wider text-cyan-400 font-semibold mb-4 flex items-center gap-2">
-          <span>{"// Profilo Professionale"}</span>
+          <span>{"// Professional Summary"}</span>
         </h2>
         <div className="bento-card rounded-2xl p-6 sm:p-7 text-sm text-zinc-300 leading-relaxed">
           {cvData.summary}
@@ -72,7 +84,7 @@ export default function CvPage() {
       <section className="mb-12">
         <h2 className="text-sm font-mono uppercase tracking-wider text-emerald-400 font-semibold mb-6 flex items-center gap-2">
           <Briefcase className="w-4 h-4" />
-          <span>{"// Esperienze Lavorative"}</span>
+          <span>{"// Engineering Experience & Student Teams"}</span>
         </h2>
 
         <div className="space-y-6">
@@ -93,7 +105,7 @@ export default function CvPage() {
 
               <div className="mb-4">
                 <span className="text-xs font-mono uppercase tracking-wider text-zinc-400 block mb-2">
-                  Risultati Chiave:
+                  Key Achievements:
                 </span>
                 <ul className="space-y-1.5 text-xs text-zinc-300">
                   {exp.achievements.map((item, i) => (
@@ -124,7 +136,7 @@ export default function CvPage() {
       <section className="mb-12">
         <h2 className="text-sm font-mono uppercase tracking-wider text-purple-400 font-semibold mb-6 flex items-center gap-2">
           <GraduationCap className="w-4 h-4" />
-          <span>{"// Istruzione e Formazione"}</span>
+          <span>{"// Education & Academics"}</span>
         </h2>
 
         <div className="space-y-4">
@@ -135,7 +147,7 @@ export default function CvPage() {
                 <span className="text-xs font-mono text-zinc-400">{edu.period}</span>
               </div>
               <span className="text-xs font-mono text-purple-400 block mb-2">{edu.institution}</span>
-              {edu.description && <p className="text-xs text-zinc-300">{edu.description}</p>}
+              {edu.description && <p className="text-xs text-zinc-300 leading-relaxed">{edu.description}</p>}
             </div>
           ))}
         </div>
@@ -143,11 +155,11 @@ export default function CvPage() {
 
       {/* Certifications & Languages Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        {/* Certifications */}
+        {/* Honors & Certifications */}
         <section>
           <h2 className="text-sm font-mono uppercase tracking-wider text-cyan-400 font-semibold mb-4 flex items-center gap-2">
             <Award className="w-4 h-4" />
-            <span>{"// Certificazioni"}</span>
+            <span>{"// Honors & Awards"}</span>
           </h2>
           <div className="bento-card rounded-2xl p-6 space-y-4">
             {cvData.certifications.map((cert, index) => (
@@ -166,7 +178,7 @@ export default function CvPage() {
         <section>
           <h2 className="text-sm font-mono uppercase tracking-wider text-emerald-400 font-semibold mb-4 flex items-center gap-2">
             <Globe className="w-4 h-4" />
-            <span>{"// Lingue"}</span>
+            <span>{"// Languages"}</span>
           </h2>
           <div className="bento-card rounded-2xl p-6 space-y-3">
             {cvData.languages.map((lang, index) => (

@@ -13,7 +13,7 @@ export function CvPrintButton() {
   return (
     <Button onClick={handlePrint} size="md" variant="outline">
       <Printer className="w-4 h-4 text-zinc-400" />
-      <span>Stampa</span>
+      <span>Print</span>
     </Button>
   );
 }
