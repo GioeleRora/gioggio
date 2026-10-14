@@ -13,10 +13,9 @@ export const projectsData: ProjectItem[] = [
     featured: true,
     order: 1,
     tags: [
-      "Zephyr RTOS",
       "C++",
       "Python",
-      "Linux (Debian)",
+      "Linux",
       "Docker",
       "Arduino UNO Q",
       "YOLOX-nano",
@@ -25,7 +24,7 @@ export const projectsData: ProjectItem[] = [
     ],
     architectureHighlights: [
       "Led team to 1st place and engineered the 3D-printed hardware enclosure; co-architected a ~€100 edge-AI node to replace €15k+ proprietary traffic sensors.",
-      "Architected dual-core firmware on Arduino UNO Q: offloaded real-time I2C sensing and traffic timers to Zephyr RTOS (C++), bridging to Debian/Docker via RPC with <7 ms latency.",
+      "Architected dual-core firmware on Arduino UNO Q: offloaded real-time I2C sensing and traffic timers to low-level C++ microcontroller firmware, bridging to Linux/Docker via RPC with <7 ms latency.",
       "Integrated local YOLOX-nano inference on 8MP IMX219 camera for GDPR-compliant tracking; relayed pedestrian and collision alerts to a live 3D web map.",
     ],
     challengesAndSolutions: [
@@ -33,7 +32,7 @@ export const projectsData: ProjectItem[] = [
         challenge:
           "Running real-time neural computer vision models on low-power edge hardware without thermal throttling or latency spikes.",
         solution:
-          "Dual-core architectural split: critical real-time sensing and timer tasks isolated on Zephyr RTOS in C++, with high-level processing in Docker containers on Debian bridged via RPC.",
+          "Dual-core architectural split: critical real-time sensing and timer tasks isolated in low-level C++ firmware, with high-level processing in Docker containers on Linux bridged via RPC.",
       },
       {
         challenge:
@@ -61,7 +60,7 @@ export const projectsData: ProjectItem[] = [
         { date: "23:59", value: 28, secondaryValue: 5 },
       ],
       recentLogs: [
-        { timestamp: "16:12:04", action: "Zephyr RTOS I2C sensor bus sync completed (latency: 4.8ms)", status: "success" },
+        { timestamp: "16:12:04", action: "I2C sensor bus sync completed (latency: 4.8ms)", status: "success" },
         { timestamp: "16:11:45", action: "YOLOX-nano frame inferenced: 4 vehicles, 2 pedestrians detected", status: "info" },
         { timestamp: "16:10:12", action: "RPC message dispatched to Docker bridge endpoint", status: "success" },
         { timestamp: "16:08:50", action: "Live 3D web map alert telemetry refreshed", status: "info" },

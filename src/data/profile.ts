@@ -14,8 +14,8 @@ export const profileData: ProfileData = {
     "Passionate about embedded systems engineering, aerospace robotics, quantum computing, and game physics simulation.",
   fullBio: [
     "I am an undergraduate Computer Engineering student at Politecnico di Torino, studying in a curriculum taught entirely in English, and an inducted member of the IEEE-Eta Kappa Nu (IEEE-HKN) Honor Society.",
-    "I actively contribute to university engineering student teams: Team Astra (IT Division, developing embedded C/C++ firmware for an autonomous spherical lunar rover) and Team QubiTo (Software & Algorithms Division, benchmarking quantum circuits).",
-    "I led the team that won 1st Place at HackTurin with the EGG project (Edge-AI Traffic Mesh Network) and continuously engineer complex technical systems spanning Zephyr RTOS, real-time sensing, Unity 3D physics engines, and modern full-stack web platforms.",
+    "I actively contribute to university engineering student teams: Team Astra (IT Division, developing embedded C/C++ firmware for an autonomous spherical lunar rover) and Team QubiTo (Politecnico di Torino's quantum computing student team).",
+    "I led the team that won 1st Place at HackTurin with the EGG project (Edge-AI Traffic Mesh Network) and continuously engineer complex technical systems spanning embedded firmware, Agentic AI architectures, Unity 3D physics engines, and modern full-stack software platforms.",
   ],
   location: "Turin, Italy",
   email: "gioelerora05@gmail.com",

@@ -3,7 +3,7 @@ import { CvData } from "@/types/cv";
 export const cvData: CvData = {
   pdfDownloadUrl: "/cv-gioele.pdf",
   summary:
-    "B.Sc. in Computer Engineering student at Politecnico di Torino (taught entirely in English) and IEEE-Eta Kappa Nu (IEEE-HKN) Honor Society member. Active embedded firmware engineering in Team Astra for an autonomous spherical lunar rover and quantum circuit simulation in Team QubiTo. 1st place winner at HackTurin with the EGG Edge-AI mesh project.",
+    "B.Sc. in Computer Engineering student at Politecnico di Torino (taught entirely in English) and IEEE-Eta Kappa Nu (IEEE-HKN) Honor Society member. Active embedded firmware engineering in Team Astra (spherical lunar rover) and member of Team QubiTo (quantum computing student team). 1st place winner at HackTurin with the EGG Edge-AI project.",
   workExperiences: [
     {
       role: "IT Division – Spherical Lunar Rover",
@@ -17,21 +17,20 @@ export const cvData: CvData = {
         "Developing, profiling, and testing embedded C/C++ firmware for DC motor velocity regulation, PWM control, and temperature sensor integration.",
         "Optimizing motor management driver libraries for resource-constrained microcontrollers; validated actuation systems for public exhibitions.",
       ],
-      technologies: ["C", "C++", "Embedded Firmware", "Zephyr RTOS", "STM32", "PWM Control", "DC Motors", "I2C/SPI"],
+      technologies: ["C", "C++", "Embedded Firmware", "STM32", "PWM Control", "DC Motors", "I2C/SPI"],
     },
     {
-      role: "Software & Algorithms Division",
+      role: "Student Team Member",
       company: "Team QubiTo – Politecnico di Torino",
       location: "Turin, Italy",
       period: "Oct 2026 — Present",
       current: true,
       description:
-        "Contributing to quantum algorithm design and circuit simulation benchmarks within the university quantum computing student team.",
+        "Student team member at Team QubiTo, the quantum computing student team of Politecnico di Torino.",
       achievements: [
-        "Benchmarking quantum algorithm implementations and analyzing computational speedup over classical circuits.",
-        "Collaborating on quantum state representation algorithms and hardware gate mapping.",
+        "Newly inducted team member participating in foundational student team activities and quantum computing initiatives.",
       ],
-      technologies: ["Python", "Quantum Computing", "Algorithm Design", "Circuit Simulation"],
+      technologies: ["Quantum Computing", "Python"],
     },
     {
       role: "Independent STEM Tutor",
