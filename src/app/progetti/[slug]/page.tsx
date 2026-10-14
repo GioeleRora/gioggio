@@ -24,12 +24,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!project) {
     return {
-      title: "Progetto non trovato",
+      title: "Project Not Found | Gioele Rora",
     };
   }
 
   return {
-    title: `${project.title} | Gioele`,
+    title: `${project.title} | Gioele Rora`,
     description: project.summary,
   };
 }
@@ -44,14 +44,14 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
-      {/* Back button */}
+      {/* Direct back link to the main projects section */}
       <div className="mb-8">
         <Link
-          href="/progetti"
+          href="/#projects"
           className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-cyan-400 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Torna all&apos;archivio progetti</span>
+          <span>Back to Portfolio Overview</span>
         </Link>
       </div>
 
@@ -80,7 +80,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         <div className="flex flex-wrap items-center gap-3">
           {project.liveUrl && (
             <Button href={project.liveUrl} external variant="primary" size="md">
-              <span>Visita Live Demo</span>
+              <span>Open Live Demo</span>
               <ArrowUpRight className="w-4 h-4" />
             </Button>
           )}
@@ -88,7 +88,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           {project.repoUrl && (
             <Button href={project.repoUrl} external variant="outline" size="md">
               <GithubIcon className="w-4 h-4" />
-              <span>Repository GitHub</span>
+              <span>GitHub Repository</span>
             </Button>
           )}
         </div>
@@ -106,16 +106,16 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </div>
       </div>
 
-      {/* Interactive Dashboard if available */}
+      {/* Interactive Telemetry Dashboard if available */}
       {project.dashboard && (
         <div className="mb-16">
           <div className="mb-4">
             <h2 className="text-xl font-mono font-bold text-white flex items-center gap-2">
               <Cpu className="w-5 h-5 text-cyan-400" />
-              <span>Dashboard Interattiva Integrata</span>
+              <span>Interactive Telemetry & Sensor Feed</span>
             </h2>
             <p className="text-xs text-zinc-400 mt-1">
-              Esplora i dati e le metriche di telemetria dell&apos;applicazione:
+              Explore real-time telemetry, RPC benchmarks, and simulated edge node metrics:
             </p>
           </div>
           <ProjectDashboardPreview dashboard={project.dashboard} />
@@ -128,7 +128,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         <div className="bento-card rounded-2xl p-6 sm:p-8">
           <div className="flex items-center gap-2 mb-4 text-cyan-400">
             <Layers className="w-5 h-5" />
-            <h3 className="font-mono text-lg font-bold text-white">Scelte Architetturali</h3>
+            <h3 className="font-mono text-lg font-bold text-white">Architectural Highlights</h3>
           </div>
           <ul className="space-y-3 text-sm text-zinc-300">
             {project.architectureHighlights.map((point, idx) => (
@@ -145,7 +145,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <div>
             <div className="flex items-center gap-2 mb-4 text-emerald-400">
               <Sparkles className="w-5 h-5" />
-              <h3 className="font-mono text-lg font-bold text-white">Panoramica & Obiettivo</h3>
+              <h3 className="font-mono text-lg font-bold text-white">System Overview</h3>
             </div>
             <p className="text-sm text-zinc-300 leading-relaxed">
               {project.fullDescription}
@@ -153,8 +153,8 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
 
           <div className="mt-6 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-zinc-400">
-            <span>Categoria: {project.categoryLabel}</span>
-            <span className="text-emerald-400">Pronto per il deploy</span>
+            <span>Category: {project.categoryLabel}</span>
+            <span className="text-emerald-400">Production Ready</span>
           </div>
         </div>
       </div>
@@ -164,7 +164,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-white mb-6 font-mono flex items-center gap-2">
             <ShieldCheck className="w-6 h-6 text-emerald-400" />
-            <span>Sfide Tecniche & Soluzioni Adottate</span>
+            <span>Engineering Challenges & Solutions</span>
           </h2>
 
           <div className="space-y-4">
@@ -172,13 +172,13 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               <div key={idx} className="bento-card rounded-xl p-6">
                 <div className="mb-2">
                   <span className="text-xs font-mono uppercase tracking-wider text-amber-400 font-semibold block mb-1">
-                    La sfida:
+                    The Challenge:
                   </span>
                   <p className="text-sm font-medium text-white">{item.challenge}</p>
                 </div>
                 <div className="mt-3 pt-3 border-t border-white/[0.06]">
                   <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold block mb-1">
-                    La soluzione tecnica:
+                    The Engineering Solution:
                   </span>
                   <p className="text-sm text-zinc-300">{item.solution}</p>
                 </div>
@@ -188,18 +188,18 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </div>
       )}
 
-      {/* Next/Prev Navigation */}
+      {/* Clean Bottom Navigation */}
       <div className="pt-8 border-t border-white/[0.08] flex items-center justify-between">
         <Link
-          href="/progetti"
+          href="/#projects"
           className="inline-flex items-center gap-2 text-sm font-mono text-zinc-400 hover:text-white transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Tutti i progetti</span>
+          <span>Back to Projects</span>
         </Link>
 
         <Button href="/#contact" variant="primary" size="sm">
-          <span>Richiedi una demo</span>
+          <span>Get in Touch</span>
         </Button>
       </div>
     </div>

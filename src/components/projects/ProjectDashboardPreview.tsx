@@ -73,7 +73,7 @@ export function ProjectDashboardPreview({ dashboard }: ProjectDashboardPreviewPr
             className={`p-2 rounded-lg bg-zinc-900 border border-white/[0.06] text-zinc-400 hover:text-cyan-400 transition-colors ${
               isRefreshing ? "animate-spin text-cyan-400" : ""
             }`}
-            title="Aggiorna metriche"
+            title="Refresh metrics"
           >
             <RefreshCw className="w-4 h-4" />
           </button>
@@ -114,8 +114,8 @@ export function ProjectDashboardPreview({ dashboard }: ProjectDashboardPreviewPr
       {/* Interactive Chart Visualizer */}
       <div className="my-6 p-4 rounded-xl bg-zinc-900/40 border border-white/[0.06]">
         <div className="flex items-center justify-between mb-4 text-xs font-mono text-zinc-400">
-          <span>Andamento Volumetrico</span>
-          <span className="text-cyan-400">Valore Max: {maxVal}</span>
+          <span>Activity & Throughput Stream</span>
+          <span className="text-cyan-400">Peak: {maxVal}</span>
         </div>
 
         {/* Responsive CSS Bar/Area Chart */}
@@ -129,7 +129,7 @@ export function ProjectDashboardPreview({ dashboard }: ProjectDashboardPreviewPr
               >
                 {/* Tooltip on hover */}
                 <div className="absolute -top-9 opacity-0 group-hover:opacity-100 transition-opacity bg-zinc-950 text-cyan-300 border border-cyan-500/40 px-2 py-0.5 rounded text-[11px] font-mono pointer-events-none whitespace-nowrap z-20">
-                  {point.val} units
+                  {point.val} events
                 </div>
 
                 {/* Bar */}
@@ -153,7 +153,7 @@ export function ProjectDashboardPreview({ dashboard }: ProjectDashboardPreviewPr
         <div className="pt-4 border-t border-white/[0.08]">
           <div className="flex items-center gap-2 mb-3 text-xs font-mono text-zinc-400 uppercase tracking-wider">
             <Terminal className="w-3.5 h-3.5 text-zinc-400" />
-            <span>Feed Eventi e Log di Sistema (Live)</span>
+            <span>Telemetry & Edge Event Log</span>
           </div>
 
           <div className="space-y-2 font-mono text-xs">
