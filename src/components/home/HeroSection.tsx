@@ -1,4 +1,4 @@
-import { ArrowDown, Download, Terminal } from "lucide-react";
+import { ArrowDown, Download } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { profileData } from "@/data/profile";
@@ -16,14 +16,6 @@ export function HeroSection() {
           <Badge variant="emerald" size="md" dot pulse>
             {profileData.statusBadge.text}
           </Badge>
-        </div>
-
-        {/* Terminal prompt badge */}
-        <div className="mb-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900/90 border border-white/[0.08] text-xs font-mono text-zinc-400">
-          <Terminal className="w-3.5 h-3.5 text-cyan-400" />
-          <span className="text-zinc-500">~/gioele $</span>
-          <span className="text-zinc-200">whoami</span>
-          <span className="text-cyan-400">→ {profileData.role}</span>
         </div>
 
         {/* Main Headline */}
