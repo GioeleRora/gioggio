@@ -5,19 +5,19 @@ export const profileData: ProfileData = {
   surname: "Rora",
   role: "Computer Engineering Student @ Politecnico di Torino",
   headline:
-    "Studente di Ingegneria Informatica al Politecnico di Torino (corso interamente in lingua inglese) e membro dell'IEEE-HKN Honor Society. Sviluppo firmware embedded, algoritmi, sistemi Edge-AI e piattaforme web moderne.",
+    "B.Sc. Computer Engineering student at Politecnico di Torino (taught entirely in English) and IEEE-HKN Honor Society member. Developing embedded firmware, Edge-AI nodes, and high-performance software systems.",
   statusBadge: {
-    text: "Aperto a opportunità di stage & progetti",
+    text: "Open to internship & project opportunities",
     available: true,
   },
   shortBio:
-    "Appassionato di ingegneria dei sistemi embedded, robotica aerospaziale, quantum computing e sviluppo software ad alte prestazioni.",
+    "Passionate about embedded systems engineering, aerospace robotics, quantum computing, and game physics simulation.",
   fullBio: [
-    "Sono uno studente di Computer Engineering al Politecnico di Torino, con un percorso accademico svolto interamente in lingua inglese e riconosciuto dall'IEEE-Eta Kappa Nu (IEEE-HKN) Honor Society.",
-    "Faccio parte dei team studenteschi d'eccellenza del Politecnico: Team Astra (Divisione IT per lo sviluppo di firmware embedded di un rover lunare sferico autonomo) e Team QubiTo (Software & Algorithms Division per quantum computing).",
-    "Ho vinto il 1° posto ad HackTurin con il progetto EGG (Edge-AI Traffic Mesh Network) e mi dedico costantemente a progetti tecnici complessi, spaziando da sistemi real-time con Zephyr RTOS e C/C++ a simulatori fisici 3D in Unity e piattaforme full-stack.",
+    "I am an undergraduate Computer Engineering student at Politecnico di Torino, studying in a curriculum taught entirely in English, and an inducted member of the IEEE-Eta Kappa Nu (IEEE-HKN) Honor Society.",
+    "I actively contribute to university engineering student teams: Team Astra (IT Division, developing embedded C/C++ firmware for an autonomous spherical lunar rover) and Team QubiTo (Software & Algorithms Division, benchmarking quantum circuits).",
+    "I led the team that won 1st Place at HackTurin with the EGG project (Edge-AI Traffic Mesh Network) and continuously engineer complex technical systems spanning Zephyr RTOS, real-time sensing, Unity 3D physics engines, and modern full-stack web platforms.",
   ],
-  location: "Torino, Italia",
+  location: "Turin, Italy",
   email: "gioelerora05@gmail.com",
   github: "https://github.com/GioeleRora",
   linkedin: "https://www.linkedin.com/in/gioelerora",
@@ -41,18 +41,18 @@ export const profileData: ProfileData = {
   highlights: [
     {
       number: "PoliTo",
-      label: "B.Sc. Computer Engineering (in English)",
-      description: "Politecnico di Torino",
+      label: "B.Sc. Computer Engineering",
+      description: "Taught entirely in English",
     },
     {
       number: "IEEE-HKN",
-      label: "IEEE Honor Society Member",
+      label: "Honor Society Member",
       description: "Mu Nu Chapter",
     },
     {
-      number: "1° Posto",
+      number: "1st Place",
       label: "@ HackTurin",
-      description: "Progetto EGG Edge-AI",
+      description: "EGG Edge-AI Project",
     },
   ],
 };

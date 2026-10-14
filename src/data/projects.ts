@@ -5,9 +5,9 @@ export const projectsData: ProjectItem[] = [
     slug: "egg-edge-ai",
     title: "EGG – Edge-AI Traffic Mesh Network",
     summary:
-      "Nodo Edge-AI a basso costo (~€100) per il monitoraggio del traffico urbano in tempo reale che sostituisce sensori proprietari da €15k+, premiato al 1° posto a HackTurin.",
+      "Low-cost (~€100) Edge-AI node for real-time urban traffic monitoring replacing €15k+ proprietary sensors. Awarded 1st Place at HackTurin.",
     fullDescription:
-      "Progetto vincitore del 1° posto ad HackTurin. EGG è una rete mesh di nodi Edge-AI distribuita per il monitoraggio intelligente del traffico urbano. Combina elaborazione neurale a bordo camera (YOLOX-nano) e architettura firmware dual-core per garantire massima reattività, basso consumo ed elevata conformità GDPR (nessun flusso video grezzo trasmesso).",
+      "Awarded 1st place at HackTurin. EGG is a distributed Edge-AI mesh node network for real-time traffic monitoring. It combines on-camera neural inference (YOLOX-nano) and an energy-efficient dual-core firmware architecture to deliver sub-7ms latency while maintaining strict GDPR compliance without streaming raw video.",
     category: "edge-ai",
     categoryLabel: "Edge-AI & Embedded",
     featured: true,
@@ -24,31 +24,31 @@ export const projectsData: ProjectItem[] = [
       "RPC",
     ],
     architectureHighlights: [
-      "Guidato il team al 1° posto ad HackTurin e ingegnerizzato il case hardware in stampa 3D; co-architettato un nodo edge-AI da ~€100 per rimpiazzare sensori proprietari da oltre €15k.",
-      "Architettato firmware dual-core su Arduino UNO Q: offloaded del sensing real-time I2C e timer traffico su Zephyr RTOS (C++), interfacciato a Debian/Docker via RPC con latenza inferiore a 7ms.",
-      "Integrata inferenza locale YOLOX-nano con modulo camera 8MP IMX219 per tracciamento anonimo GDPR-compliant e inoltro di alert pedoni e collisioni a una mappa web 3D live.",
+      "Led team to 1st place and engineered the 3D-printed hardware enclosure; co-architected a ~€100 edge-AI node to replace €15k+ proprietary traffic sensors.",
+      "Architected dual-core firmware on Arduino UNO Q: offloaded real-time I2C sensing and traffic timers to Zephyr RTOS (C++), bridging to Debian/Docker via RPC with <7 ms latency.",
+      "Integrated local YOLOX-nano inference on 8MP IMX219 camera for GDPR-compliant tracking; relayed pedestrian and collision alerts to a live 3D web map.",
     ],
     challengesAndSolutions: [
       {
         challenge:
-          "Eseguire modelli di computer vision in tempo reale su micro-hardware edge a basso costo mantenendo la determinazione temporale.",
+          "Running real-time neural computer vision models on low-power edge hardware without thermal throttling or latency spikes.",
         solution:
-          "Separazione architetturale dual-core: task temporali critici e gestione dei sensori I2C isolati su Zephyr RTOS in C++, con bridge RPC verso l'ambiente Debian containerizzato su Docker.",
+          "Dual-core architectural split: critical real-time sensing and timer tasks isolated on Zephyr RTOS in C++, with high-level processing in Docker containers on Debian bridged via RPC.",
       },
       {
         challenge:
-          "Garantire il rispetto rigoroso della privacy GDPR nel monitoraggio di strade pubbliche.",
+          "Ensuring full GDPR privacy compliance for public road monitoring.",
         solution:
-          "Elaborazione edge 100% locale: i fotogrammi della videocamera non vengono mai salvati né trasmessi in rete, convertendosi immediatamente in metadati vettoriali e statistiche anonimizzate.",
+          "100% on-device edge processing: video frames are never stored or transmitted over the network, converting immediately into anonymous vector coordinates and aggregate counts.",
       },
     ],
     dashboard: {
       title: "EGG Telemetry & Sensor Mesh Feed",
-      description: "Metriche di elaborazione edge e latenza RPC del nodo Arduino UNO Q.",
+      description: "Edge processing performance and RPC bridge latency on Arduino UNO Q.",
       kpis: [
-        { label: "Latenza Bridge RPC", value: "< 7 ms", change: "Sub-10ms target", isPositive: true },
-        { label: "Costo Hardware Nodo", value: "~€100", change: "-99% vs €15k sensori", isPositive: true },
-        { label: "Modello Neurale", value: "YOLOX-nano", change: "8MP IMX219", isPositive: true },
+        { label: "RPC Bridge Latency", value: "< 7 ms", change: "Sub-10ms target", isPositive: true },
+        { label: "Hardware Unit Cost", value: "~€100", change: "-99% vs €15k sensors", isPositive: true },
+        { label: "Neural Model", value: "YOLOX-nano", change: "8MP IMX219", isPositive: true },
         { label: "Privacy Status", value: "100% GDPR", change: "Zero video streamed", isPositive: true },
       ],
       chartData: [
@@ -72,9 +72,9 @@ export const projectsData: ProjectItem[] = [
     slug: "drone-delivery-simulator",
     title: "Drone Delivery Simulator – 3D Aerodynamics & Systems Game",
     summary:
-      "Simulatore di volo fisico in Unity con calcolo dell'aerodinamica in tempo reale, variazione dinamica della massa del carico e consumo della batteria.",
+      "Physics flight simulator in Unity featuring real-time aerodynamics, dynamic payload center-of-mass shifts, and battery drain modeling.",
     fullDescription:
-      "Simulatore di volo e sistemi dinamici ingegnerizzato in Unity con motore fisico 3D personalizzato. Modella il comportamento aerodinamico del multirotore considerando lo spostamento del centro di massa con carico utile, coefficienti di drag variabili e scarica realistica della batteria.",
+      "A flight and systems simulator engineered in Unity featuring a custom 3D physics engine. Accurately simulates multirotor aerodynamic behavior under varying payload masses, drag coefficients, and battery discharge rates.",
     category: "simulation",
     categoryLabel: "3D Physics & Simulation",
     featured: true,
@@ -87,22 +87,22 @@ export const projectsData: ProjectItem[] = [
       "Git",
     ],
     architectureHighlights: [
-      "Ingegnerizzato simulatore di volo in Unity con calcolo in tempo reale di spostamento della massa del carico, aerodinamica e consumo dinamico della batteria.",
-      "Architettata pipeline procedurale per generare missioni combinate a logica a stati e meccaniche di progressione per esplorazione verticale.",
-      "Progettato framework di input analogico per gamepad a bassissima latenza e caricamento continuo dei livelli tramite shader glassmorphism in HLSL.",
+      "Engineered a physics flight simulator in Unity featuring real-time payload mass shifts, drag calculations, and dynamic battery drain.",
+      "Architected procedural mission pipelines combined with branching state logic and unlocking mechanics for vertical exploration.",
+      "Designed a low-latency analog gamepad input framework and continuous, loading-free level deployment using modern glassmorphism shaders.",
     ],
     challengesAndSolutions: [
       {
         challenge:
-          "Simulare fedelmente le variazioni di manovrabilità al variare del carico utile agganciato al drone.",
+          "Simulating authentic aerodynamic turbulence and instantaneous center-of-mass displacement upon payload release.",
         solution:
-          "Ricalcolo dinamico a ogni frame del tensore d'inerzia e del centro di massa nel rigid body di Unity.",
+          "Mathematical aerodynamic force modeling computed every physics tick in Unity, dynamically updating moment-of-inertia tensors.",
       },
       {
         challenge:
-          "Garantire un framerate elevato e stabile senza stuttering durante la transizione tra aree di gioco complesse.",
+          "Maintaining a stable high frame-rate without stuttering during seamless level transitions.",
         solution:
-          "Streaming asincrono dei livelli e shader ottimizzati con Shader Graph e HLSL dedicati.",
+          "Asynchronous level streaming and optimized shaders built with Shader Graph and HLSL.",
       },
     ],
   },
@@ -110,9 +110,9 @@ export const projectsData: ProjectItem[] = [
     slug: "route-2025",
     title: "Route 2025 – Full-Stack Event Logistics Platform",
     summary:
-      "Piattaforma centralizzata per la logistica di eventi Scout con tracking delle presenze in tempo reale e sincronizzazione per oltre 30 partecipanti contemporanei.",
+      "Centralized platform for Scout event logistics, optimizing live attendance tracking and coordination across multiple regional groups.",
     fullDescription:
-      "Piattaforma web modulare progettata e implementata per la gestione logistica e il coordinamento sul campo di eventi Scout. Centralizza il monitoraggio delle presenze live, la gestione degli itinerari e la condivisione istantanea delle tappe tra gruppi regionali diversi.",
+      "A modular web platform engineered for real-time field coordination of Scout events. Centralizes live attendance tracking, itinerary route checkpoints, and seamless status synchronization across 30+ concurrent participants.",
     category: "web-app",
     categoryLabel: "Full-Stack Web App",
     featured: true,
@@ -126,16 +126,16 @@ export const projectsData: ProjectItem[] = [
     ],
     liveUrl: "https://route2025.vercel.app",
     architectureHighlights: [
-      "Architettata una piattaforma centralizzata per la logistica di eventi Scout, ottimizzando il tracking delle presenze live e il coordinamento tra molteplici gruppi regionali.",
-      "Implementati endpoint REST modulari e una dashboard responsive per sincronizzare lo stato live tra oltre 30 partecipanti contemporanei.",
-      "Mantenuta pipeline di deployment su Vercel con integrazione continua automatizzata e branch protection su GitHub.",
+      "Architected a centralized platform for Scout event logistics, optimizing live attendance tracking and coordination for multiple regional groups.",
+      "Implemented modular REST endpoints and a responsive dashboard to streamline live status synchronization across 30+ concurrent participants.",
+      "Maintained deployment pipelines via Vercel with automated continuous integration and branch protection on GitHub.",
     ],
     challengesAndSolutions: [
       {
         challenge:
-          "Assicurare reattività e fruibilità del servizio anche con connettività mobile limitata durante le uscite all'aperto.",
+          "Ensuring responsiveness and reliability under intermittent cellular connectivity in outdoor field environments.",
         solution:
-          "Interfaccia responsive ultra-leggera senza bundle pesanti e hosting su edge network Vercel per tempi di caricamento minimi.",
+          "Ultra-lightweight responsive interface with minimal bundle size deployed globally on Vercel's Edge CDN network.",
       },
     ],
   },

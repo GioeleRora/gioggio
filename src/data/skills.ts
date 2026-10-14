@@ -3,8 +3,8 @@ import { SkillGroup } from "@/types/skill";
 export const skillGroups: SkillGroup[] = [
   {
     id: "backend",
-    title: "Linguaggi di Programmazione",
-    description: "Linguaggi per sviluppo di sistemi, firmware a basso livello, simulazioni e backend.",
+    title: "Programming Languages",
+    description: "Systems programming, low-level firmware, simulation physics, and software logic.",
     skills: [
       { name: "C", category: "backend", level: "Avanzato", highlight: true },
       { name: "C++", category: "backend", level: "Avanzato", highlight: true },
@@ -18,14 +18,14 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     id: "devops-cloud",
-    title: "Sistemi & Sistemi Embedded",
-    description: "Sviluppo real-time, microcontrollori, automazione robotica e ambienti Linux.",
+    title: "Systems & Embedded",
+    description: "Real-time embedded firmware, microcontroller architectures, and Linux environments.",
     skills: [
       { name: "Zephyr RTOS", category: "devops-cloud", level: "Avanzato", highlight: true },
       { name: "Linux (Debian, CLI)", category: "devops-cloud", level: "Avanzato", highlight: true },
       { name: "STM32 Microcontrollers", category: "devops-cloud", level: "Intermedio", highlight: true },
       { name: "Arduino (UNO Q)", category: "devops-cloud", level: "Avanzato", highlight: true },
-      { name: "Edge-AI & YOLOX", category: "devops-cloud", level: "Avanzato", highlight: true },
+      { name: "Edge-AI & YOLOX-nano", category: "devops-cloud", level: "Avanzato", highlight: true },
       { name: "Docker", category: "devops-cloud", level: "Intermedio" },
       { name: "I2C / SPI Communication", category: "devops-cloud", level: "Avanzato" },
       { name: "DC Motor Control & PWM", category: "devops-cloud", level: "Avanzato" },
@@ -33,8 +33,8 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     id: "tools-methodologies",
-    title: "Strumenti, Frameworks & Simulazione",
-    description: "Motori fisici 3D, runtime web e workflow di Continuous Integration.",
+    title: "Tools, Frameworks & Simulation",
+    description: "3D physics engines, version control workflows, and CI/CD deployment pipelines.",
     skills: [
       { name: "Unity Engine (3D Physics)", category: "tools-methodologies", level: "Avanzato", highlight: true },
       { name: "Node.js", category: "tools-methodologies", level: "Avanzato", highlight: true },
