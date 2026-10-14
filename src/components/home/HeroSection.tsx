@@ -28,11 +28,11 @@ export function HeroSection() {
 
         {/* Main Headline */}
         <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
-          Sviluppo software moderno,{" "}
+          Ingegneria Informatica,{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-cyan-300">
-            scalabile
+            Embedded
           </span>{" "}
-          ed orientato al futuro.
+          & Sistemi Intelligenti.
         </h1>
 
         {/* Subtitle / Description */}

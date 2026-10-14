@@ -7,9 +7,9 @@ import { profileData } from "@/data/profile";
 import { CvPrintButton } from "@/components/cv/CvPrintButton";
 
 export const metadata: Metadata = {
-  title: "Curriculum Vitae | Gioele",
+  title: "Curriculum Vitae | Gioele Rora",
   description:
-    "Curriculum vitae completo di Gioele: esperienze lavorative, percorso accademico, certificazioni e competenze tecniche.",
+    "Curriculum vitae di Gioele Rora: B.Sc. Computer Engineering @ Politecnico di Torino, IEEE-HKN, Team Astra e Team QubiTo.",
 };
 
 export default function CvPage() {

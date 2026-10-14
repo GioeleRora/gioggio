@@ -17,20 +17,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gioele | Full-Stack Developer & Software Engineer",
+  title: "Gioele Rora | Computer Engineering & Embedded Systems",
   description:
-    "Sito personale e portfolio di Gioele: progetti full-stack, architetture cloud, dashboard interattive e curriculum vitae.",
+    "Portfolio personale di Gioele Rora: studente di Ingegneria Informatica al Politecnico di Torino, membro IEEE-HKN, firmware embedded, Edge-AI e simulazioni.",
   keywords: [
-    "Full Stack Developer",
-    "Software Engineer",
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Node.js",
+    "Gioele Rora",
+    "Politecnico di Torino",
+    "Computer Engineering",
+    "Embedded Systems",
+    "Zephyr RTOS",
+    "C++",
+    "Edge-AI",
+    "HackTurin",
     "Portfolio",
-    "Gioele",
   ],
-  authors: [{ name: "Gioele" }],
+  authors: [{ name: "Gioele Rora" }],
 };
 
 export default function RootLayout({

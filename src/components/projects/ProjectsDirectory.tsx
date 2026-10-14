@@ -14,11 +14,10 @@ export function ProjectsDirectory({ projects }: ProjectsDirectoryProps) {
   const [searchQuery, setSearchQuery] = useState<string>("");
 
   const categories = [
-    { id: "all", label: "Tutti" },
-    { id: "web-app", label: "Web App" },
-    { id: "dashboard", label: "Dashboard & Analytics" },
-    { id: "api-backend", label: "Backend & API" },
-    { id: "tool", label: "Strumenti & CLI" },
+    { id: "all", label: "Tutti i Progetti" },
+    { id: "edge-ai", label: "Edge-AI & Embedded" },
+    { id: "simulation", label: "Simulazione 3D" },
+    { id: "web-app", label: "Piattaforme Web" },
   ];
 
   const filteredProjects = projects.filter((project) => {

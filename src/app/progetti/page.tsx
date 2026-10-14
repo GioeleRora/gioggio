@@ -4,9 +4,9 @@ import { ProjectsDirectory } from "@/components/projects/ProjectsDirectory";
 import { projectsData } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "Archivio Progetti | Gioele",
+  title: "Archivio Progetti | Gioele Rora",
   description:
-    "Tutti i progetti sviluppati: web app scalabili, dashboard analitiche, backend distribuiti e strumenti per developer.",
+    "Progetti tecnici di Gioele Rora: EGG (Edge-AI Traffic Mesh), Drone Delivery Simulator (Unity 3D Physics) e Route 2025.",
 };
 
 export default function ProjectsPage() {
