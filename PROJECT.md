@@ -108,4 +108,7 @@ Sezioni che hanno bisogno di respiro e non appesantiscono la Home:
 - [x] **Fase 2:** Creazione del Layout base (Navbar fissa tech, Footer) e sviluppo della Home Page (Hero, Bento About, Tech Stack, Featured Projects, Timeline).
 - [x] **Fase 3:** Setup dell'infrastruttura dati dei Progetti locali tipizzati e pagine `/progetti` + `/progetti/[slug]` (con dashboard interattiva).
 - [x] **Fase 4:** Pagina `/cv` con visualizzazione completa, download del PDF da `/public/cv-gioele.pdf` e stampa.
-- [ ] **Fase 5:** Inserimento dei contenuti definitivi forniti dall'utente e deploy su Vercel.
+- [x] **Fase 5:** Inserimento dei dati e progetti reali di Gioele Rora (Politecnico di Torino, IEEE-HKN, Team Astra, Team QubiTo, EGG, Drone Simulator, Route 2025).
+- [x] **Fase 6:** Traduzione integrale in lingua inglese (`en`), razionalizzazione dell'UX/navigazione e rimozione di percorsi ridondanti.
+- [x] **Fase 7:** Deploy in produzione su Vercel (`https://gioggio.vercel.app`) collegato al repository GitHub (`GioeleRora/gioggio`).
+
