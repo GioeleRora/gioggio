@@ -30,7 +30,7 @@ export function HeroSection() {
                     fill
                     priority
                     sizes="(max-width: 640px) 224px, (max-width: 1024px) 288px, 320px"
-                    className="object-cover object-top filter contrast-[1.03] transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="object-cover object-center filter contrast-[1.03] transition-transform duration-700 ease-out group-hover:scale-105"
                   />
 
                   {/* Gentle gradient overlay for contrast */}
