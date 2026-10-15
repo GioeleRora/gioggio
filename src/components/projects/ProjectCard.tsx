@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Activity, ArrowRight } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
@@ -26,6 +27,23 @@ export function ProjectCard({ project, featuredMode = false }: ProjectCardProps)
             </span>
           )}
         </div>
+
+        {/* Project Thumbnail Image if present */}
+        {project.thumbnailUrl && (
+          <Link
+            href={`/progetti/${project.slug}`}
+            className="block relative aspect-[16/9] w-full rounded-xl overflow-hidden mb-5 bg-zinc-950 border border-white/[0.08] group-hover:border-cyan-500/30 transition-all"
+          >
+            <Image
+              src={project.thumbnailUrl}
+              alt={project.title}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 450px"
+              className="object-cover object-top transition-transform duration-500 group-hover:scale-105 filter contrast-[1.02]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-20 transition-opacity" />
+          </Link>
+        )}
 
         {/* Project Title */}
         <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors mb-3">

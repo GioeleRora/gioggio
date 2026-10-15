@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { ArrowLeft, ArrowUpRight, Layers, ShieldCheck, Sparkles, Cpu } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Layers, ShieldCheck, Sparkles, Cpu, Camera } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
 import { projectsData } from "@/data/projects";
 import { Badge } from "@/components/ui/Badge";
@@ -119,6 +120,65 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </p>
           </div>
           <ProjectDashboardPreview dashboard={project.dashboard} />
+        </div>
+      )}
+
+      {/* Visual Interface & System Captures if available */}
+      {project.screenshots && project.screenshots.length > 0 && (
+        <div className="mb-16">
+          <div className="mb-6">
+            <h2 className="text-xl font-mono font-bold text-white flex items-center gap-2">
+              <Camera className="w-5 h-5 text-cyan-400" />
+              <span>Visual Interface & System Captures</span>
+            </h2>
+            <p className="text-xs text-zinc-400 mt-1">
+              High-resolution captures and interface walkthrough:
+            </p>
+          </div>
+
+          <div
+            className={`grid gap-6 ${
+              project.screenshots.length === 1
+                ? "grid-cols-1"
+                : "grid-cols-1 md:grid-cols-2"
+            }`}
+          >
+            {project.screenshots.map((shot, idx) => (
+              <div
+                key={idx}
+                className={`bento-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between group overflow-hidden ${
+                  idx === 0 && project.screenshots && project.screenshots.length % 2 !== 0 && project.screenshots.length > 1
+                    ? "md:col-span-2"
+                    : ""
+                }`}
+              >
+                <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-zinc-950 border border-white/[0.08] mb-4">
+                  <Image
+                    src={shot.url}
+                    alt={shot.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 900px"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent pointer-events-none" />
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                      SYS.IMG // 0{idx + 1}
+                    </span>
+                    <h3 className="text-base font-bold text-white tracking-tight">
+                      {shot.title}
+                    </h3>
+                  </div>
+                  <p className="text-xs text-zinc-400 leading-relaxed font-sans">
+                    {shot.caption}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       )}
 
