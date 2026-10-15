@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Download, Briefcase, GraduationCap, Award, Globe, Mail, MapPin, ArrowLeft } from "lucide-react";
+import { Download, Briefcase, GraduationCap, Award, Globe, Mail, MapPin, ArrowLeft, Phone } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { cvData } from "@/data/cv";
@@ -51,19 +51,27 @@ export default function CvPage() {
       </div>
 
       {/* CV Contact & Meta strip */}
-      <div className="bento-card rounded-2xl p-6 mb-12 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-zinc-300">
+      <div className="bento-card rounded-2xl p-6 mb-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs font-mono text-zinc-300">
         <div className="flex items-center gap-2">
-          <MapPin className="w-4 h-4 text-cyan-400" />
+          <MapPin className="w-4 h-4 text-cyan-400 shrink-0" />
           <span>{profileData.location}</span>
         </div>
         <div className="flex items-center gap-2">
-          <Mail className="w-4 h-4 text-emerald-400" />
-          <a href={`mailto:${profileData.email}`} className="hover:underline">
+          <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
+          <a href={`mailto:${profileData.email}`} className="hover:underline truncate">
             {profileData.email}
           </a>
         </div>
+        {profileData.phone && (
+          <div className="flex items-center gap-2">
+            <Phone className="w-4 h-4 text-amber-400 shrink-0" />
+            <a href={`tel:${profileData.phone}`} className="hover:underline">
+              {profileData.phone}
+            </a>
+          </div>
+        )}
         <div className="flex items-center gap-2">
-          <Globe className="w-4 h-4 text-purple-400" />
+          <Globe className="w-4 h-4 text-purple-400 shrink-0" />
           <a href={profileData.github} target="_blank" rel="noopener noreferrer" className="hover:underline">
             github.com/GioeleRora
           </a>

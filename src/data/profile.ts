@@ -19,6 +19,8 @@ export const profileData: ProfileData = {
   ],
   location: "Turin, Italy",
   email: "gioelerora05@gmail.com",
+  studentEmail: "gioele.rora@studenti.polito.it",
+  phone: "+39 371 411 2144",
   github: "https://github.com/GioeleRora",
   linkedin: "https://www.linkedin.com/in/gioelerora",
   socials: [

@@ -17,6 +17,8 @@ export interface ProfileData {
   fullBio: string[];
   location: string;
   email: string;
+  studentEmail?: string;
+  phone?: string;
   github: string;
   linkedin: string;
   socials: SocialLink[];
