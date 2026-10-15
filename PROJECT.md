@@ -111,4 +111,6 @@ Sezioni che hanno bisogno di respiro e non appesantiscono la Home:
 - [x] **Fase 5:** Inserimento dei dati e progetti reali di Gioele Rora (Politecnico di Torino, IEEE-HKN, Team Astra, Team QubiTo, EGG, Drone Simulator, Route 2025).
 - [x] **Fase 6:** Traduzione integrale in lingua inglese (`en`), razionalizzazione dell'UX/navigazione e rimozione di percorsi ridondanti.
 - [x] **Fase 7:** Deploy in produzione su Vercel (`https://gioggio.vercel.app`) collegato al repository GitHub (`GioeleRora/gioggio`).
+- [x] **Fase 8:** Integrazione ritratto fotografico ufficiale in Hero (colonna sinistra, riquadro rotondo con tech ring e glow neon) e sincronizzazione completa del CV ufficiale PDF con aggiornamento meriti accademici e progetti.
+
 
