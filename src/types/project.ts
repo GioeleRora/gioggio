@@ -32,6 +32,12 @@ export interface ProjectDashboardData {
   }[];
 }
 
+export interface ProjectScreenshot {
+  url: string;
+  title: string;
+  caption: string;
+}
+
 export interface ProjectItem {
   slug: string;
   title: string;
@@ -45,6 +51,7 @@ export interface ProjectItem {
   liveUrl?: string;
   repoUrl?: string;
   thumbnailUrl?: string;
+  screenshots?: ProjectScreenshot[];
   architectureHighlights: string[];
   challengesAndSolutions: {
     challenge: string;

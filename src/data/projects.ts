@@ -78,6 +78,14 @@ export const projectsData: ProjectItem[] = [
     categoryLabel: "3D Physics & Simulation",
     featured: true,
     order: 2,
+    thumbnailUrl: "/projects/drone-delivery.png",
+    screenshots: [
+      {
+        url: "/projects/drone-delivery.png",
+        title: "Multirotor Flight Workbench & Hardware Inspection",
+        caption: "High-detail multirotor drone model on the workshop testing bench in Unity, visualizing component placement and aerodynamic prop guards.",
+      },
+    ],
     tags: [
       "Unity",
       "C#",
@@ -107,34 +115,59 @@ export const projectsData: ProjectItem[] = [
   },
   {
     slug: "route-2025",
-    title: "Route 2025 – Full-Stack Event Logistics Platform",
+    title: "Route 2025 – Full-Stack Scout Logistics & Heatmap Platform",
     summary:
-      "Centralized platform for Scout event logistics, optimizing live attendance tracking and coordination across multiple regional groups.",
+      "Modern zero-build web platform and algorithmic continuous slot planner built for Scout groups with Neon PostgreSQL and interactive heatmaps.",
     fullDescription:
-      "A modular web platform engineered for real-time field coordination of Scout events. Centralizes live attendance tracking, itinerary route checkpoints, and seamless status synchronization across 30+ concurrent participants.",
+      "A zero-build web application engineered for Clan & Fuoco scout groups to eliminate messy chat polls. Features a touch-optimized 62-day summer calendar, PostgreSQL persistence on Neon Serverless, and an automated continuous window algorithm calculating the highest-attendance route dates.",
     category: "web-app",
     categoryLabel: "Full-Stack Web App",
     featured: true,
     order: 3,
+    thumbnailUrl: "/projects/route2025-results.png",
+    screenshots: [
+      {
+        url: "/projects/route2025-results.png",
+        title: "Attendance Heatmap & Optimal Continuous Window",
+        caption: "Color-graded calendar heatmap computing the highest common attendance interval across all registered participants with 1-click WhatsApp sharing.",
+      },
+      {
+        url: "/projects/route2025-calendar.png",
+        title: "Touch-Optimized Interactive Calendar",
+        caption: "Custom 62-day mobile calendar with smart touch recognition distinguishing between taps (<8px) and vertical page scrolling.",
+      },
+      {
+        url: "/projects/route2025-home.png",
+        title: "Multi-Clan Group Dashboard",
+        caption: "Centralized coordination hub with multi-clan data isolation, live participant counts, and individual response badges.",
+      },
+    ],
     tags: [
       "Node.js",
+      "Express",
+      "PostgreSQL (Neon)",
       "JavaScript (ES6+)",
-      "HTML5/CSS3",
+      "Zero-Build Architecture",
       "Vercel",
-      "Git CI/CD",
     ],
-    liveUrl: "https://route2025.vercel.app",
     architectureHighlights: [
-      "Architected a centralized platform for Scout event logistics, optimizing live attendance tracking and coordination for multiple regional groups.",
-      "Implemented modular REST endpoints and a responsive dashboard to streamline live status synchronization across 30+ concurrent participants.",
-      "Maintained deployment pipelines via Vercel with automated continuous integration and branch protection on GitHub.",
+      "Engineered a zero-build client architecture (pure semantic HTML5 and vanilla CSS/JS) ensuring instant load times over remote 3G/4G mountain networks.",
+      "Implemented an optimal continuous window algorithm that calculates maximum concurrent attendance intervals (customizable from 2 to 31 days).",
+      "Architected multi-clan tenant isolation backed by Neon Serverless PostgreSQL with atomic upserts and indexed query resolution.",
+      "Designed an intelligent touch interaction engine on mobile distinguishing tap events from scroll gestures for seamless calendar selection.",
     ],
     challengesAndSolutions: [
       {
         challenge:
-          "Ensuring responsiveness and reliability under intermittent cellular connectivity in outdoor field environments.",
+          "Eliminating unintentional date selections while scrolling through the 62-day calendar on small mobile screens.",
         solution:
-          "Ultra-lightweight responsive interface with minimal bundle size deployed globally on Vercel's Edge CDN network.",
+          "Implemented a custom touch threshold listener that tracks pixel displacement, executing date toggles only when finger movement is under 8px.",
+      },
+      {
+        challenge:
+          "Computing the optimal continuous route window when no single date has 100% attendance across all members.",
+        solution:
+          "Engineered a resilient sliding-window algorithm that optimizes for maximum joint availability and daily average presence, dynamically extending adjacent matches.",
       },
     ],
   },
