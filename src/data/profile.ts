@@ -38,6 +38,7 @@ export const profileData: ProfileData = {
       iconName: "Mail",
     },
   ],
+  avatarUrl: "/gioele.jpg",
   highlights: [
     {
       number: "PoliTo",

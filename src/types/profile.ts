@@ -20,6 +20,7 @@ export interface ProfileData {
   github: string;
   linkedin: string;
   socials: SocialLink[];
+  avatarUrl?: string;
   highlights: {
     number: string;
     label: string;
