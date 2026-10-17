@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { cvData } from "@/data/cv";
 import { profileData } from "@/data/profile";
 import { CvPrintButton } from "@/components/cv/CvPrintButton";
+import { LinkedinIcon } from "@/components/ui/Icons";
 
 export const metadata: Metadata = {
   title: "Curriculum Vitae | Gioele Rora",
@@ -62,6 +63,18 @@ export default function CvPage() {
             {profileData.email}
           </a>
         </div>
+        <div className="flex items-center gap-2">
+          <LinkedinIcon className="w-4 h-4 text-cyan-400 shrink-0" />
+          <a href={profileData.linkedin} target="_blank" rel="noopener noreferrer" className="hover:underline truncate">
+            linkedin.com/in/gioelerora
+          </a>
+        </div>
+        <div className="flex items-center gap-2">
+          <Globe className="w-4 h-4 text-purple-400 shrink-0" />
+          <a href={profileData.github} target="_blank" rel="noopener noreferrer" className="hover:underline truncate">
+            github.com/GioeleRora
+          </a>
+        </div>
         {profileData.phone && (
           <div className="flex items-center gap-2">
             <Phone className="w-4 h-4 text-amber-400 shrink-0" />
@@ -70,12 +83,6 @@ export default function CvPage() {
             </a>
           </div>
         )}
-        <div className="flex items-center gap-2">
-          <Globe className="w-4 h-4 text-purple-400 shrink-0" />
-          <a href={profileData.github} target="_blank" rel="noopener noreferrer" className="hover:underline">
-            github.com/GioeleRora
-          </a>
-        </div>
       </div>
 
       {/* Professional Summary */}
