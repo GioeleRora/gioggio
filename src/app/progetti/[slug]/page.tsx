@@ -138,7 +138,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
           <div
             className={`grid gap-6 ${
-              project.screenshots.length === 1
+              project.screenshotAspect === "portrait"
+                ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+                : project.screenshots.length === 1
                 ? "grid-cols-1"
                 : "grid-cols-1 md:grid-cols-2"
             }`}
@@ -147,17 +149,31 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               <div
                 key={idx}
                 className={`bento-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between group overflow-hidden ${
-                  idx === 0 && project.screenshots && project.screenshots.length % 2 !== 0 && project.screenshots.length > 1
+                  project.screenshotAspect !== "portrait" &&
+                  idx === 0 &&
+                  project.screenshots &&
+                  project.screenshots.length % 2 !== 0 &&
+                  project.screenshots.length > 1
                     ? "md:col-span-2"
                     : ""
                 }`}
               >
-                <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-zinc-950 border border-white/[0.08] mb-4">
+                <div
+                  className={`relative w-full rounded-xl overflow-hidden bg-zinc-950 border border-white/[0.08] mb-4 ${
+                    project.screenshotAspect === "portrait"
+                      ? "aspect-[9/16]"
+                      : "aspect-[16/10]"
+                  }`}
+                >
                   <Image
                     src={shot.url}
                     alt={shot.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, 900px"
+                    sizes={
+                      project.screenshotAspect === "portrait"
+                        ? "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 350px"
+                        : "(max-width: 768px) 100vw, 900px"
+                    }
                     className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent pointer-events-none" />

@@ -8,6 +8,7 @@ export const skillGroups: SkillGroup[] = [
     skills: [
       { name: "C", category: "backend", level: "Avanzato", highlight: true },
       { name: "C++", category: "backend", level: "Avanzato", highlight: true },
+      { name: "Kotlin", category: "backend", level: "Avanzato", highlight: true },
       { name: "C#", category: "backend", level: "Avanzato", highlight: true },
       { name: "Python", category: "backend", level: "Avanzato", highlight: true },
       { name: "Java", category: "backend", level: "Intermedio" },
@@ -21,6 +22,8 @@ export const skillGroups: SkillGroup[] = [
     title: "Systems & Embedded",
     description: "Microcontroller architectures, real-time sensing, edge computing, and Linux environments.",
     skills: [
+      { name: "Android SDK & Jetpack Compose", category: "devops-cloud", level: "Avanzato", highlight: true },
+      { name: "Google ML Kit (On-Device Vision)", category: "devops-cloud", level: "Avanzato", highlight: true },
       { name: "STM32 Microcontrollers", category: "devops-cloud", level: "Intermedio", highlight: true },
       { name: "Arduino (UNO Q)", category: "devops-cloud", level: "Avanzato", highlight: true },
       { name: "Linux (Debian, CLI)", category: "devops-cloud", level: "Avanzato", highlight: true },

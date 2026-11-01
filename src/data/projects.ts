@@ -68,6 +68,122 @@ export const projectsData: ProjectItem[] = [
     },
   },
   {
+    slug: "tapout-alarm",
+    title: "⚡ TapOut – Commercial-Grade Unstoppable Alarm & Physical App Blocker",
+    summary:
+      "Commercial-grade native Android app built with Kotlin and Jetpack Compose featuring hardware-enforced volume lock, NFC tag physical disarm, on-device ML Kit pose detection, and accessibility-based focus app blocker.",
+    fullDescription:
+      "TapOut is an advanced native Android application designed to definitively eradicate chronic snooze and morning smartphone distraction. Combining an unkillable, high-priority alarm engine with physical disarming mechanics, TapOut requires users to physically tap an NFC transponder placed across the room or complete an active dance mission analyzed 100% in volatile RAM via Google ML Kit Pose Detection. It further integrates a zero-overhead physical app blocker leveraging AccessibilityService window monitoring, alongside comprehensive Room v5 persistence tracking wake-up streaks and focus hours.",
+    category: "mobile-app",
+    categoryLabel: "Native Android & Systems",
+    featured: true,
+    order: 2,
+    thumbnailUrl: "/projects/tapout-banner.png",
+    screenshotAspect: "portrait",
+    screenshots: [
+      {
+        url: "/projects/tapout/01_onboarding.png",
+        title: "Guided Onboarding & Play Store Privacy Disclosure",
+        caption: "Step-by-step setup wizard with real-time permission status checks and Google Play compliant prominent disclosure for accessibility services.",
+      },
+      {
+        url: "/projects/tapout/02_sveglie_dashboard.png",
+        title: "Alarms Dashboard & Zero-Scroll Interface",
+        caption: "Cyber Dark aesthetic in Electric Pink (#FF2A85) featuring live digital clock, active alarms list, and quick toggle switches.",
+      },
+      {
+        url: "/projects/tapout/03_nuova_sveglia_dialog.png",
+        title: "Compact Zero-Scroll Alarm Creation Dialog",
+        caption: "Single-screen compact modal with 46dp time capsule selector (CompactTimePod), ringtone picker, and side-by-side wake-up method selection.",
+      },
+      {
+        url: "/projects/tapout/04_blocco_app.png",
+        title: "Physical App Blocker & Focus Sessions",
+        caption: "Vibrant Purple (#7C4DFF) focus interface with instant duration chips (30m, 1h, 2h), blacklist package manager, and programmable weekly schedules.",
+      },
+      {
+        url: "/projects/tapout/05_statistiche.png",
+        title: "Wake-Up Analytics & Morning Streak Tracking",
+        caption: "Amber Gold (#FFAB00) performance dashboard with consecutive streak counter, sub-second reaction times, and custom Compose Canvas 7-day bar charts.",
+      },
+      {
+        url: "/projects/tapout/06_impostazioni.png",
+        title: "Hardware Settings, NFC Pairing & Privacy",
+        caption: "Slate Blue (#38BDF8) systems panel for multi-tag NFC transponder registration, freemium licensing state, and local privacy guarantees.",
+      },
+    ],
+    tags: [
+      "Kotlin",
+      "Jetpack Compose",
+      "Android 15 (API 35)",
+      "Google ML Kit",
+      "CameraX",
+      "NFC (ReaderMode)",
+      "AccessibilityService",
+      "Room Database",
+      "Material 3",
+      "Clean Architecture",
+    ],
+    architectureHighlights: [
+      "Unstoppable Alarm & AudioGuard Engine: Routes audio strictly over STREAM_ALARM hardware channel at continuous 100% volume; bypasses volume-down tampering via real-time interception, operates over Keyguard via showWhenLocked/turnScreenOn, and implements AlarmManager.setAlarmClock() with boot-persistence receivers.",
+      "Universal Physical NFC Disarm: Leverages NfcAdapter.enableReaderMode to extract low-level hexadecimal serial UIDs from NTAG213/215/216, Mifare Classic/Ultralight, and corporate/university RFID badges (ISO/IEC 14443-A/B/F/V), backed by 1-tap Settings.Panel quick prompts.",
+      "Zero-Disk On-Device Dance Mission: Integrates CameraX ImageAnalysis with Google ML Kit Pose Detection; calculates kinetic torso variance normalized against shoulder span to render phone-shaking cheats ineffective, processing frames strictly in volatile RAM with zero disk writes or cloud offloading.",
+      "Physical & Scheduled App Blocker: Intercepts TYPE_WINDOW_STATE_CHANGED via AppBlockerAccessibilityService with O(1) in-memory blacklist checks, displaying an unbreakable BlockerOverlayActivity disarmable only through physical NFC tap or kinetic dance challenge.",
+      "OEM Hardening & Play Store Compliance: Integrates customized OEM routing (OemHelper) for autostart and popup permissions across Xiaomi (HyperOS), OnePlus/Oppo (ColorOS), and Samsung (OneUI), alongside a compliant Prominent Disclosure onboarding wizard.",
+    ],
+    challengesAndSolutions: [
+      {
+        challenge:
+          "Ensuring the alarm rings reliably and is impossible to dismiss or mute by drowsy users, even with lock screen or hardware volume buttons.",
+        solution:
+          "Enforced audio routing through STREAM_ALARM with a continuous background audio monitor neutralizing volume cuts; disabled snooze UI and used showWhenLocked and turnScreenOn with exact kernel alarm clocks.",
+      },
+      {
+        challenge:
+          "Preventing anti-cheat false triggers when users must unlock their device to activate the system NFC antenna on locked screens.",
+        solution:
+          "Engineered a controlled 20-second Keyguard Safe Pause that temporarily suspends the anti-cheat guard during biometric authentication without closing the active alarm activity.",
+      },
+      {
+        challenge:
+          "Performing real-time human pose detection on mobile camera frames without battery drain, lag, or privacy risks.",
+        solution:
+          "Configured CameraX ImageAnalysis to pipeline frames directly into Google ML Kit Pose Detection in volatile RAM; computed torso-normalized displacement tensors with deadband filters and immediately invoked imageProxy.close() without saving a single byte to disk.",
+      },
+      {
+        challenge:
+          "Maintaining zero latency and battery efficiency while intercepting unauthorized app launches on modern Android versions.",
+        solution:
+          "Implemented an ultra-lightweight AccessibilityService filtering exclusively on TYPE_WINDOW_STATE_CHANGED with pre-cached in-memory package lookups, strictly whitelisting core system UI and emergency dialers.",
+      },
+    ],
+    dashboard: {
+      title: "TapOut Telemetry & Hardware Engine",
+      description: "Real-time metrics for AudioGuard enforcement, NFC disarm latency, and on-device ML Kit pose detection.",
+      kpis: [
+        { label: "AudioGuard Volume", value: "100%", change: "STREAM_ALARM locked", isPositive: true },
+        { label: "NFC Disarm Latency", value: "< 12 ms", change: "ReaderMode ISO 14443-A", isPositive: true },
+        { label: "ML Kit Pose Inference", value: "100% RAM", change: "Zero disk / Zero cloud", isPositive: true },
+        { label: "Wake-Up Streak Record", value: "14 Days", change: "Zero emergency snoozes", isPositive: true },
+      ],
+      chartData: [
+        { date: "Mon", value: 4.2, secondaryValue: 6.5 },
+        { date: "Tue", value: 3.8, secondaryValue: 7.0 },
+        { date: "Wed", value: 3.5, secondaryValue: 8.0 },
+        { date: "Thu", value: 4.1, secondaryValue: 7.5 },
+        { date: "Fri", value: 3.2, secondaryValue: 8.5 },
+        { date: "Sat", value: 4.5, secondaryValue: 5.0 },
+        { date: "Sun", value: 3.8, secondaryValue: 6.0 },
+      ],
+      recentLogs: [
+        { timestamp: "07:00:00", action: "Alarm triggered via AlarmManager.setAlarmClock() — AudioGuard 100% volume locked", status: "success" },
+        { timestamp: "07:00:04", action: "NFC ReaderMode: ISO 14443-A UID [04:A2:8F:B1:9C] verified — Alarm disarmed in 3.8s", status: "success" },
+        { timestamp: "07:00:05", action: "Room v5 WakeUpLog recorded: streak incremented to 14 consecutive days", status: "success" },
+        { timestamp: "08:30:00", action: "AppBlocker AccessibilityService: intercepted blocked package [com.social.app]", status: "warning" },
+      ],
+    },
+  },
+  {
     slug: "drone-delivery-simulator",
     title: "Drone Delivery Simulator – 3D Aerodynamics & Systems Game",
     summary:
@@ -77,7 +193,7 @@ export const projectsData: ProjectItem[] = [
     category: "simulation",
     categoryLabel: "3D Physics & Simulation",
     featured: true,
-    order: 2,
+    order: 3,
     thumbnailUrl: "/projects/drone-delivery.png",
     screenshots: [
       {
@@ -123,7 +239,7 @@ export const projectsData: ProjectItem[] = [
     category: "web-app",
     categoryLabel: "Full-Stack Web App",
     featured: true,
-    order: 3,
+    order: 4,
     thumbnailUrl: "/projects/route2025-results.png",
     screenshots: [
       {

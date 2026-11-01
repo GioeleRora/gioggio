@@ -5,6 +5,7 @@ export type ProjectCategory =
   | "embedded"
   | "api-backend"
   | "dashboard"
+  | "mobile-app"
   | "tool";
 
 export interface MetricCardData {
@@ -52,6 +53,7 @@ export interface ProjectItem {
   repoUrl?: string;
   thumbnailUrl?: string;
   screenshots?: ProjectScreenshot[];
+  screenshotAspect?: "portrait" | "landscape";
   architectureHighlights: string[];
   challengesAndSolutions: {
     challenge: string;

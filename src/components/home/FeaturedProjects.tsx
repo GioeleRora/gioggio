@@ -14,12 +14,12 @@ export function FeaturedProjects() {
           Featured Engineering Projects
         </h2>
         <p className="text-zinc-400 mt-2 max-w-xl text-sm sm:text-base">
-          Edge-AI mesh networks, 3D physics simulations, and full-stack event infrastructure.
+          Edge-AI mesh networks, commercial Android systems, 3D physics simulations, and full-stack event platforms.
         </p>
       </div>
 
-      {/* Direct 3 Projects Grid - No redundant archive loop */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Featured Projects Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projectsData.map((project) => (
           <ProjectCard key={project.slug} project={project} featuredMode={true} />
         ))}

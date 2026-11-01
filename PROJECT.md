@@ -115,6 +115,7 @@ Sezioni che hanno bisogno di respiro e non appesantiscono la Home:
 - [x] **Fase 9:** Privacy Audit & Anonymization: anonimizzazione e sfocatura con maschera calibrata dei nomi reali dei partecipanti nei badge di `route2025-home.png`, oscuramento del numero telefonico privato dal bundle pubblico e rimodulazione contatti professionali su LinkedIn, GitHub e Email istituzionale.
 - [x] **Fase 10:** Perfezionamento Bio accademica / team universitari, inserimento del Web Development in Active Technical Focus ed estensione del pattern a griglia tecnologica e luci ambientali a tutte le sezioni della Home.
 - [x] **Fase 11:** Creazione del documento di riferimento globale `PROJECT_OVERVIEW.txt` contenente l'intera architettura, stack, dati reali, mappe delle cartelle e linee guida operative per qualsiasi intelligenza artificiale o sviluppatore.
+- [x] **Fase 12:** Integrazione del progetto reale "TapOut – Commercial-Grade Unstoppable Alarm & Physical App Blocker" (Kotlin, Jetpack Compose, ML Kit Pose Detection on-device, NFC ReaderMode, AppBlocker AccessibilityService, Room v5). Copia dei 6 screenshot portrait in `/public/projects/tapout/`, generazione banner composite 16:9 (`tapout-banner.png`), supporto `screenshotAspect: "portrait"` per galleria mobile a 3 colonne, aggiornamento filtri e arricchimento competenze Android/Kotlin.
 
 
 

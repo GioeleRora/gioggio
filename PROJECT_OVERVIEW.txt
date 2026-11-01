@@ -229,7 +229,37 @@ per una visione panoramica in 60 secondi, affiancata da sottopagine dedicate:
      * Modello Neurale: YOLOX-nano su IMX219
      * Privacy: 100% GDPR Compliant (Zero video streamed)
 
-2. Drone Delivery Simulator – 3D Aerodynamics & Systems Game
+2. TapOut – Commercial-Grade Unstoppable Alarm & Physical App Blocker
+   - Slug: `tapout-alarm`
+   - Categoria: Native Android & Systems
+   - Sintesi: Applicazione Android nativa commerciale in Kotlin e Jetpack Compose con
+     blocco fisico tramite NFC e Dance Mission in computer vision on-device.
+   - Architettura Software & Caratteristiche:
+     * AudioGuard Engine: instradamento audio forzato al 100% su `STREAM_ALARM`,
+       intercettazione real-time dei tasti volume e assenza di pulsante snooze.
+     * Risveglio a schermo spento e bloccato via `showWhenLocked(true)` e `turnScreenOn(true)`
+       con sincronizzazione millisecondo e kernel wake-lock.
+     * Keyguard Safe Pause (20s): sospensione controllata anti-cheat per sblocco
+       biometrico schermo e attivazione antenna NFC.
+     * Modulo NFC ReaderMode: lettura UID esadecimale universale a basso livello
+       (NTAG213/215/216, Mifare Classic/Ultralight, badge aziendali/universitari ISO 14443-A/B/F/V).
+     * Dance Mission On-Device: Google ML Kit Pose Detection in streaming via CameraX
+       ImageAnalysis. Calcolo varianza cinetica torso normalizzata su larghezza bi-acromiale
+       (immunità totale allo scuotimento del telefono) e privacy assoluta 100% RAM volatile (zero disco/cloud).
+     * Physical App Blocker: monitoraggio ultra-leggero `TYPE_WINDOW_STATE_CHANGED` via
+       `AccessibilityService` con lookup O(1) in memoria e sessioni focus (30m, 1h, 2h).
+     * Statistiche e Streak: persistenza Room v5 (`WakeUpLogEntity`, `FocusLogEntity`),
+       tracciamento tempi di reazione ed elaborazione grafici a barre 7 giorni in Compose Canvas.
+   - Asset Grafici:
+     * `/projects/tapout-banner.png`: Banner composite 16:9 con anteprima 3 device.
+     * `/projects/tapout/01_onboarding.png`: Onboarding e Prominent Disclosure Play Store.
+     * `/projects/tapout/02_sveglie_dashboard.png`: Dashboard sveglie in Rosa Elettrico (#FF2A85).
+     * `/projects/tapout/03_nuova_sveglia_dialog.png`: Dialog compatto a capsule senza scroll.
+     * `/projects/tapout/04_blocco_app.png`: Schermata blocco app in Viola Vibrante (#7C4DFF).
+     * `/projects/tapout/05_statistiche.png`: Statistiche e streak in Oro Caldo (#FFAB00).
+     * `/projects/tapout/06_impostazioni.png`: Gestione hardware NFC in Blu Acciaio (#38BDF8).
+
+3. Drone Delivery Simulator – 3D Aerodynamics & Systems Game
    - Slug: `drone-delivery-simulator`
    - Categoria: 3D Physics & Simulation
    - Sintesi: Simulatore di volo e di sistemi sviluppato in Unity con motore fisico 3D.
@@ -242,7 +272,7 @@ per una visione panoramica in 60 secondi, affiancata da sottopagine dedicate:
        in HLSL e Shader Graph con transizioni asincrone senza schermate di caricamento.
    - Asset Grafico: `/projects/drone-delivery.png` (banco di collaudo e ispezione multirotore).
 
-3. Route 2025 – Full-Stack Scout Logistics & Heatmap Platform
+4. Route 2025 – Full-Stack Scout Logistics & Heatmap Platform
    - Slug: `route-2025`
    - Categoria: Full-Stack Web App
    - Sintesi: Web application zero-build ideata per gruppi scout (Clan & Fuoco) per
