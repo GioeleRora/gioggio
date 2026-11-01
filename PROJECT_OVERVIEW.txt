@@ -89,7 +89,7 @@ Obiettivi primari:
 --------------------------------------------------------------------------------
 3. STACK TECNOLOGICO
 --------------------------------------------------------------------------------
-- Framework Core: Next.js 16.4.0 (App Router, Turbopack, React Server Components)
+- Framework Core: Next.js 16.4.3 (App Router, Turbopack, React Server Components)
 - Libreria UI: React 19.3.0 + React DOM 19.3.0
 - Linguaggio: TypeScript 5+ (Strict Mode attivo per massima affidabilita')
 - Motore CSS & Design System: Tailwind CSS v4 (con `@theme` per CSS custom properties)
