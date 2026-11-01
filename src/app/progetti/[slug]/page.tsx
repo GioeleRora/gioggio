@@ -139,7 +139,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <div
             className={`grid gap-6 ${
               project.screenshotAspect === "portrait"
-                ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+                ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
                 : project.screenshots.length === 1
                 ? "grid-cols-1"
                 : "grid-cols-1 md:grid-cols-2"
@@ -161,7 +161,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 <div
                   className={`relative w-full rounded-xl overflow-hidden bg-zinc-950 border border-white/[0.08] mb-4 ${
                     project.screenshotAspect === "portrait"
-                      ? "aspect-[9/16]"
+                      ? "aspect-[620/1386]"
                       : "aspect-[16/10]"
                   }`}
                 >
@@ -171,7 +171,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                     fill
                     sizes={
                       project.screenshotAspect === "portrait"
-                        ? "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 350px"
+                        ? "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
                         : "(max-width: 768px) 100vw, 900px"
                     }
                     className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"

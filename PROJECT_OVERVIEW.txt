@@ -251,13 +251,15 @@ per una visione panoramica in 60 secondi, affiancata da sottopagine dedicate:
      * Statistiche e Streak: persistenza Room v5 (`WakeUpLogEntity`, `FocusLogEntity`),
        tracciamento tempi di reazione ed elaborazione grafici a barre 7 giorni in Compose Canvas.
    - Asset Grafici:
-     * `/projects/tapout-banner.png`: Banner composite 16:9 con anteprima 3 device.
-     * `/projects/tapout/01_onboarding.png`: Onboarding e Prominent Disclosure Play Store.
-     * `/projects/tapout/02_sveglie_dashboard.png`: Dashboard sveglie in Rosa Elettrico (#FF2A85).
-     * `/projects/tapout/03_nuova_sveglia_dialog.png`: Dialog compatto a capsule senza scroll.
-     * `/projects/tapout/04_blocco_app.png`: Schermata blocco app in Viola Vibrante (#7C4DFF).
-     * `/projects/tapout/05_statistiche.png`: Statistiche e streak in Oro Caldo (#FFAB00).
-     * `/projects/tapout/06_impostazioni.png`: Gestione hardware NFC in Blu Acciaio (#38BDF8).
+     * `/projects/tapout-banner.png`: Banner composite 16:9 con anteprima reale su device.
+     * `/projects/tapout/01_dashboard_sveglie.png`: Dashboard sveglie in Rosa Elettrico (#FF2A85).
+     * `/projects/tapout/02_blocco_app.png`: Schermata blocco app in Viola Vibrante (#7C4DFF).
+     * `/projects/tapout/03_statistiche_streak.png`: Statistiche, streak 7 giorni e grafico Canvas (#FFAB00).
+     * `/projects/tapout/04_impostazioni_nfc.png`: Gestione hardware Tag NFC (UID) e VIP in Blu Acciaio (#38BDF8).
+     * `/projects/tapout/05_onboarding_welcome.png`: Onboarding Step 1: Benvenuto e 3 pilastri.
+     * `/projects/tapout/06_onboarding_permissions.png`: Onboarding Step 2: Affidabilità e avvio automatico OnePlus.
+     * `/projects/tapout/07_onboarding_accessibility.png`: Onboarding Step 3: Prominent Disclosure Play Store.
+     * `/projects/tapout/08_onboarding_methods.png`: Onboarding Step 4: Sblocco cinetico e registrazione NFC.
 
 3. Drone Delivery Simulator – 3D Aerodynamics & Systems Game
    - Slug: `drone-delivery-simulator`
