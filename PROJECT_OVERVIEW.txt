@@ -1,0 +1,387 @@
+================================================================================
+                    PROJECT OVERVIEW & KNOWLEDGE BASE
+          Sito Web Personale & Portfolio Tecnico — Gioele Rora
+================================================================================
+
+Questo documento raccoglie la descrizione completa, l'architettura tecnica, 
+le scelte di design, i dati del profilo e le linee guida operative del progetto.
+È stato redatto come riferimento universale e permanente per qualsiasi 
+intelligenza artificiale (AI) o sviluppatore che acceda a questo codebase.
+
+Data ultimo aggiornamento: Novembre 2026
+Stato: In produzione su Vercel (https://gioggio.vercel.app)
+Repository: https://github.com/GioeleRora/gioggio.git
+
+
+--------------------------------------------------------------------------------
+1. OBIETTIVO E VISIONE DEL PROGETTO
+--------------------------------------------------------------------------------
+Il progetto e' il sito personale e portfolio ingegneristico di Gioele Rora,
+sviluppato come piattaforma web moderna, scalabile, esteticamente avanzata
+e ottimizzata per recruiter tecnici, docenti universitari, aziende tech
+e colleghi sviluppatori.
+
+Obiettivi primari:
+1. Personal Branding ad alto impatto visivo e tecnico: rappresentare l'identita'
+   di Gioele (Ingegneria Informatica al Politecnico di Torino, membro IEEE-HKN,
+   firmware engineer in Team Astra, membro Team QubiTo).
+2. Showcase Tecnico Dettagliato: presentare progetti reali e verificabili
+   (Edge-AI, simulazioni fisiche 3D, piattaforme web full-stack), corredati da
+   schede architetturali, sfide ingegneristiche risolte, gallerie screenshot
+   e dashboard di telemetria interattive.
+3. Curriculum Vitae accessibile e scaricabile: versione web strutturata per
+   lettura rapida, sincronizzata con il PDF ufficiale scaricabile in un clic
+   (pubblicato in /public/cv-gioele.pdf) e ottimizzata per la stampa cartacea.
+4. Architettura Zero-Cost & Massime Performance: nessun server proprietario da
+   mantenere acceso; dati gestiti in locale in formato TypeScript tipizzato;
+   compilazione statica (SSG/PPR) con hosting serverless edge su Vercel a costo zero.
+
+
+--------------------------------------------------------------------------------
+2. IDENTITA' E BACKGROUND DI GIOELE RORA (DATI UFFICIALI)
+--------------------------------------------------------------------------------
+- Nome completo: Gioele Rora
+- Ruolo: Computer Engineering Student @ Politecnico di Torino
+- Percorso accademico: Laurea Triennale in Ingegneria Informatica (B.Sc.),
+  erogata interamente in lingua inglese.
+- Onorificenza accademica: Membro selezionato di IEEE-Eta Kappa Nu (IEEE-HKN),
+  Mu Nu Chapter (societa' d'onore internazionale dell'IEEE per merito negli studi).
+- Meriti accademici universitari:
+  * Computer Science Principles: 30 e Lode / 30
+  * Digital Electronics Design: 30 / 30
+  * Cambridge English Assessment: Certificazione B2 (piena fluidita' professionale)
+- Formazione secondaria ed extra-accademica:
+  * Maturita' Scientifica (Opzione Scienze Applicate) ad Alba con 80/100;
+    partecipazione attiva alle Olimpiadi di Matematica, Fisica e Informatica.
+  * Fondazione Golinelli — Summer Science Academy (Luglio 2022): progettazione
+    e sviluppo di un termociclatore PCR automatizzato con Arduino.
+  * Programma Erasmus+ (Opava, Repubblica Ceca, Febbraio 2023): cooperazione
+    europea su workshop STEM e comunicazione interculturale.
+- Team Studenteschi Universitari:
+  1. Team Astra (Politecnico di Torino) — Settembre 2024 - Presente:
+     Ruolo: Embedded Firmware Engineer (Divisione IT).
+     Focus: Sviluppo firmware C/C++ su microcontrollori STM32 per rover lunare
+     sferico a propulsione interna a pendolo e braccio robotico (controllo PWM,
+     regolazione velocita' motori DC, bus sensori ambientali I2C/SPI).
+  2. Team QubiTo (Politecnico di Torino) — Ottobre 2026 - Presente:
+     Ruolo: Software Division Member.
+     Focus: Quantum computing, algoritmi quantistici, paradigmi di
+     ottimizzazione di circuiti quantistici e benchmark di simulazione.
+- Attivita' di Leadership & Volontariato:
+  * Capo Reparto Scout AGESCI (Alba): coordinamento educativo di oltre 30 ragazzi,
+    gestione logistica e sicurezza per eventi e percorsi escursionistici nazionali.
+  * Tutor privato STEM indipendente (dal 2021): supporto in Analisi Matematica,
+    Fisica, Algebra Lineare e Programmazione algoritmica.
+  * Volontario Operazione Mato Grosso (OMG, dal 2015): lavori edili e manutenzione
+    strutturale in alta quota presso il Rifugio delle Marmotte.
+- Canali Ufficiali di Contatto:
+  * LinkedIn: https://www.linkedin.com/in/gioelerora
+  * GitHub: https://github.com/GioeleRora
+  * Email Personale: gioelerora05@gmail.com
+  * Email Istituzionale: gioele.rora@studenti.polito.it
+  * Citta': Torino, Italia
+- LINEE GUIDA SULLA PRIVACY (IMPORTANTE PER TUTTE LE AI):
+  Il numero di cellulare personale e i nomi dei partecipanti a eventi o app
+  (es. Route 2025) NON devono essere esposti in chiaro nel codice sorgente
+  pubblico o nei metadata web, per prevenire scraping, spam e violazioni GDPR.
+
+
+--------------------------------------------------------------------------------
+3. STACK TECNOLOGICO
+--------------------------------------------------------------------------------
+- Framework Core: Next.js 16.4.0 (App Router, Turbopack, React Server Components)
+- Libreria UI: React 19.3.0 + React DOM 19.3.0
+- Linguaggio: TypeScript 5+ (Strict Mode attivo per massima affidabilita')
+- Motore CSS & Design System: Tailwind CSS v4 (con `@theme` per CSS custom properties)
+- Icone: Lucide React (v1.57.0) + icone SVG personalizzate per brand (es. LinkedIn)
+- Animazioni: Framer Motion (v14.2.0) e micro-transizioni CSS native con curve cubiche
+- Analytics & Telemetria: @vercel/analytics e @vercel/speed-insights
+- Piattaforma di Hosting & CI/CD: Vercel (Edge CDN globale serverless)
+- Repository & Version Control: Git + GitHub (repository: GioeleRora/gioggio)
+
+
+--------------------------------------------------------------------------------
+4. ARCHITETTURA DI GESTIONE DEI DATI (LOCAL-FIRST)
+--------------------------------------------------------------------------------
+Il sito adotta un'architettura dati statica locale tipizzata (Local-First Static Data):
+- Nessun database relazionale o backend server attivo in esecuzione continua.
+- Tutti i dati risiedono in file TypeScript dedicati all'interno di `src/data/`:
+  * `src/data/profile.ts`: anagrafica, bio, contatti, link social, highlight.
+  * `src/data/skills.ts`: competenze tecnologiche per categorie con livelli.
+  * `src/data/projects.ts`: schede complete, architettura, KPI e dashboard.
+  * `src/data/cv.ts`: esperienze lavorative, percorso accademico, certificazioni, lingue.
+- I tipi corrispondenti sono definiti rigorosamente in `src/types/`:
+  * `src/types/profile.ts`
+  * `src/types/skill.ts`
+  * `src/types/project.ts`
+  * `src/types/cv.ts`
+- Vantaggi per il progetto:
+  * Zero costi di server e hosting.
+  * Massima velocita' di caricamento: tutte le pagine vengono prerenderizzate
+    durante la build (`next build`) in HTML/CSS statico distribuito su CDN.
+  * Aggiornabile modificando semplicemente i file dati e facendo push su GitHub.
+
+
+--------------------------------------------------------------------------------
+5. DESIGN SYSTEM & IDENTITA' VISIVA
+--------------------------------------------------------------------------------
+L'esperienza visiva adotta un'estetica "Modern Deep Tech Dark Mode":
+
+1. Colori e Palette:
+   - Sfondo Principale Canvas: `#08090d` (nero notte profondo ad altissimo contrasto).
+   - Superfici e Card: `#0e121a` e `#131926` con trasparenze ed effetto glassmorphism.
+   - Accento Neon Cyan: `#00f5ff` / `#38bdf8` (link attivi, bagliori, pillar tech).
+   - Accento Neon Emerald: `#10b981` / `#00ff9d` (indicatori di disponibilita', KPI positivi).
+   - Accento Neon Purple: `#8b5cf6` (gradienti di transizione secondari, badge soft).
+   - Testi: Bianco puro (`#ffffff`) per i titoli, Slate chiaro (`#f1f5f9` / `#cbd5e1`)
+     per i paragrafi, Zinco (`#71717a`) per etichette secondarie.
+
+2. Pattern e Texture:
+   - `tech-grid-bg`: griglia reticolare radiale a punti sottili (passo 24px).
+   - `tech-section-pattern`: combinazione di reticolo a punti e linee incrociate
+     ingegneristiche (passo 24px e 96px) con sfumature ambientali.
+   - Luci ambientali sfocate (`blur-[120px] - blur-[150px]`): bagliori ciano,
+     smeraldo e viola distribuiti morbidamente dietro i contenuti.
+
+3. Bento Card Layout:
+   - Bordo sottile semi-trasparente (`border-white/[0.08]`).
+   - Sfondo semi-trasparente con sfocatura (`backdrop-blur-xl`).
+   - Hover state con bagliore neon ciano e micro-sollevamento (`translate-y-[-2px]`).
+
+4. Ritratto Profilo Ufficiale in Hero Section:
+   - Posizionato nella colonna di sinistra su desktop (col-span-5) e centrato su mobile.
+   - Riquadro perfettamente circolare (`rounded-full`) con doppio anello tecnologico.
+   - Immagine centrata (`object-cover object-center`) sul viso, occhiali e divisa Team Astra.
+   - Badge flottante ancorato alla base della circonferenza: "Gioele Rora • Team Astra".
+
+
+--------------------------------------------------------------------------------
+6. MAPPA DELLE PAGINE E STRUTTURA DI NAVIGAZIONE
+--------------------------------------------------------------------------------
+L'applicazione combina un approccio ibrido: una Home Page scorrevole e completa
+per una visione panoramica in 60 secondi, affiancata da sottopagine dedicate:
+
+1. Pagina Home (`/` — `src/app/page.tsx`):
+   - HeroSection (`src/components/home/HeroSection.tsx`):
+     * Colonna Sinistra: Ritratto fotografico rotondo con alone neon e badge flottante.
+     * Colonna Destra: Badge di disponibilita' ("Open to internship & project opportunities"),
+       Headline principale, breve bio, pulsanti CTA "View Technical Projects" e
+       "Download Resume (PDF)", barra metrica PoliTo / IEEE-HKN / HackTurin.
+   - BentoAbout (`src/components/home/BentoAbout.tsx`):
+     * Card 1: Background accademico, appartenenza ai team Astra e QubiTo, 3 pilastri core.
+     * Card 2: Active Technical Focus (Firmware C/C++, Web Dev, Agentic AI, Motori DC).
+     * Card 3: Formazione e appartenenza a IEEE-HKN Mu Nu Chapter.
+   - TechStackGrid (`src/components/home/TechStackGrid.tsx`):
+     * Categoria 1: Systems & Embedded (STM32, Arduino UNO Q, Linux Debian, Edge-AI YOLOX-nano, I2C/SPI, PWM).
+     * Categoria 2: Web & Full-Stack (Next.js, React, Node.js, TypeScript, Tailwind CSS, PostgreSQL Neon, REST/RPC).
+     * Categoria 3: Tools, AI Architecture & Simulation (Agentic AI Management, Unity 3D Physics, Git, Vercel, Docker).
+     * Categoria 4: Programming Languages (C, C++, C#, Python, JavaScript ES6+, Java, SQL).
+   - FeaturedProjects (`src/components/home/FeaturedProjects.tsx`):
+     * Schede dei progetti di punta con tag tecnologici, miniature grafiche, link a demo e
+       pulsante di navigazione verso la scheda tecnica approfondita.
+   - ExperienceTimeline (`src/components/home/ExperienceTimeline.tsx`):
+     * Cronologia interattiva delle esperienze universitarie, di leadership e progetti chiave.
+   - Footer (`src/components/layout/Footer.tsx`):
+     * Riepilogo copyright, stato del sistema, link diretti a GitHub e LinkedIn.
+
+2. Archivio Completo Progetti (`/progetti` — `src/app/progetti/page.tsx`):
+   - Catalogo completo dei progetti con barra di ricerca istantanea e filtri
+     per categoria (Tutti, Edge-AI & Embedded, Simulazioni 3D, Applicazioni Web).
+
+3. Scheda Dettaglio Progetto & Dashboard (`/progetti/[slug]` — `src/app/progetti/[slug]/page.tsx`):
+   - Generazione statica dinamica via `generateStaticParams`.
+   - Scheda tecnica completa: problema affrontato, architettura software implementata,
+     sfide e soluzioni ingegneristiche, tag tecnologici e link alle demo.
+   - Galleria screenshot in alta definizione con didascalie tecniche.
+   - Dashboard Interattiva integrata con KPI cards, grafici temporali e log di sistema.
+
+4. Curriculum Vitae Web (`/cv` — `src/app/cv/page.tsx`):
+   - Pagina completa e formattata per recruiter.
+   - Barra superiore con recapiti professionali (Location, Email istituzionale, LinkedIn, GitHub).
+   - Pulsante dedicato "Download PDF Resume" collegato a `/public/cv-gioele.pdf`.
+   - Pulsante "Print Resume" con foglio di stile ottimizzato per stampa cartacea/PDF pulito.
+   - Sezioni: Professional Summary, Work & Team Experiences, Education, Honors & Certifications, Languages.
+
+
+--------------------------------------------------------------------------------
+7. CATALOGO DEI PROGETTI REALI IN EVIDENZA
+--------------------------------------------------------------------------------
+
+1. EGG – Edge-AI Traffic Mesh Network
+   - Slug: `egg-edge-ai`
+   - Categoria: Edge-AI & Embedded
+   - Riconoscimento: 1° Posto assoluto a HackTurin Hackathon.
+   - Sintesi: Nodo Edge-AI a basso costo (~€100) per il monitoraggio del traffico
+     urbano in tempo reale, progettato per sostituire sensori proprietari da oltre €15.000.
+   - Architettura Software & Hardware:
+     * Architettura firmware dual-core su scheda Arduino UNO Q.
+     * I compiti critici di sensing I2C in tempo reale e i timer del traffico sono
+       isolati nel firmware C++ a basso livello sul microcontrollore.
+     * Il processing ad alto livello e i container Docker girano su Linux, collegati
+       tramite bridge RPC con latenza inferiore a 7 millisecondi.
+     * Inferenza neurale YOLOX-nano eseguita localmente su telecamera IMX219 da 8MP.
+     * 100% conforme al GDPR: i flussi video non vengono mai salvati o trasmessi in rete;
+       vengono elaborati sul bordo e convertiti immediatamente in coordinate vettoriali
+       e conteggi anonimi inviati a una mappa 3D web in tempo reale.
+   - KPI Dashboard:
+     * RPC Bridge Latency: < 7 ms
+     * Costo Hardware: ~€100 (-99% rispetto ai sensori tradizionali)
+     * Modello Neurale: YOLOX-nano su IMX219
+     * Privacy: 100% GDPR Compliant (Zero video streamed)
+
+2. Drone Delivery Simulator – 3D Aerodynamics & Systems Game
+   - Slug: `drone-delivery-simulator`
+   - Categoria: 3D Physics & Simulation
+   - Sintesi: Simulatore di volo e di sistemi sviluppato in Unity con motore fisico 3D.
+   - Architettura & Caratteristiche:
+     * Modellazione matematica delle forze aerodinamiche, coefficienti di drag
+       e calcolo dinamico del baricentro (center-of-mass) allo sgancio del carico.
+     * Modello di scarica della batteria calcolato in base alla potenza dei motori.
+     * Pipeline di missioni procedurali con macchine a stati per l'esplorazione verticale.
+     * Supporto a input analogico da gamepad a bassa latenza e shader personalizzati
+       in HLSL e Shader Graph con transizioni asincrone senza schermate di caricamento.
+   - Asset Grafico: `/projects/drone-delivery.png` (banco di collaudo e ispezione multirotore).
+
+3. Route 2025 – Full-Stack Scout Logistics & Heatmap Platform
+   - Slug: `route-2025`
+   - Categoria: Full-Stack Web App
+   - Sintesi: Web application zero-build ideata per gruppi scout (Clan & Fuoco) per
+     eliminare sondaggi caotici e pianificare le date ottimali della Route estiva.
+   - Architettura Software:
+     * Architettura client Zero-Build (HTML5 semantico puro, CSS e JavaScript vanilla)
+       per garantire caricamento immediato anche sotto rete 3G/4G di montagna.
+     * Backend su Node.js ed Express con persistenza su Neon Serverless PostgreSQL.
+     * Algoritmo a finestra scorrevole (Sliding Continuous Window): calcola la massima
+       presenza contemporanea continua (configurabile da 2 a 31 giorni consecutivi).
+     * Riconoscimento touch intelligente su mobile: tolleranza di spostamento <8px per
+       distinguere un tocco di selezione data dallo scorrimento verticale della pagina.
+     * Isolamento multi-clan (multi-tenancy) e condivisione rapida su WhatsApp.
+     * Privacy: nomi e cognomi dei partecipanti anonimizzati e sfocati negli screenshot pubblici.
+   - Asset Grafici:
+     * `/projects/route2025-results.png`: Heatmap del calendario e finestra ottimale.
+     * `/projects/route2025-calendar.png`: Calendario mobile touch a 62 giorni.
+     * `/projects/route2025-home.png`: Dashboard di coordinamento dei gruppi.
+
+
+--------------------------------------------------------------------------------
+8. MAPPA DELLE CARTELLE DEL REPOSITORY
+--------------------------------------------------------------------------------
+La cartella radice del progetto e' strutturata come segue:
+
+/
+├── src/
+│   ├── app/                      # Next.js App Router (Pagine e Layout)
+│   │   ├── layout.tsx            # Root Layout HTML (Navbar, Footer, Font Geist)
+│   │   ├── page.tsx              # Home Page (One-page scroller)
+│   │   ├── globals.css           # Tailwind v4 @theme, colori neon, pattern tech
+│   │   ├── progetti/
+│   │   │   ├── page.tsx          # Archivio Progetti (Ricerca e filtri)
+│   │   │   └── [slug]/
+│   │   │       └── page.tsx      # Scheda Progetto & Dashboard Interattiva
+│   │   └── cv/
+│   │       └── page.tsx          # Curriculum Vitae Web (Stampa e Download)
+│   │
+│   ├── components/               # Componenti React Modulari
+│   │   ├── layout/               # Elementi globali (Navbar.tsx, Footer.tsx)
+│   │   ├── home/                 # Sezioni Home (HeroSection, BentoAbout, TechStackGrid,
+│   │   │                         # FeaturedProjects, ExperienceTimeline)
+│   │   ├── projects/             # Componenti Progetti (ProjectCard, ProjectsDirectory,
+│   │   │                         # ProjectDashboardPreview)
+│   │   ├── cv/                   # Componenti CV (CvPrintButton.tsx)
+│   │   └── ui/                   # Primitive grafiche riutilizzabili (Badge, Button, Icons)
+│   │
+│   ├── data/                     # Sorgenti Dati Statici Tipizzati (Local-First)
+│   │   ├── profile.ts            # Dati personali e bio di Gioele Rora
+│   │   ├── skills.ts             # Competenze suddivise per categorie
+│   │   ├── projects.ts           # Dati completi, architetture e dashboard progetti
+│   │   └── cv.ts                 # Esperienze, istruzione, meriti accademici e lingue
+│   │
+│   ├── types/                    # Definizioni TypeScript (Interfacce e Tipi)
+│   │   ├── profile.ts
+│   │   ├── skill.ts
+│   │   ├── project.ts
+│   │   └── cv.ts
+│   │
+│   └── lib/
+│       └── utils.ts              # Funzioni helper (es. cn per merge di classi Tailwind)
+│
+├── public/                       # File statici serviti direttamente dal web server
+│   ├── cv-gioele.pdf             # PDF ufficiale del CV scaricabile
+│   ├── gioele.jpg                # Foto ritratto ufficiale in alta definizione
+│   └── projects/                 # Immagini e screenshot dei progetti
+│       ├── drone-delivery.png
+│       ├── route2025-calendar.png
+│       ├── route2025-home.png
+│       └── route2025-results.png
+│
+├── PROJECT_OVERVIEW.txt          # (QUESTO FILE) Documentazione omnicomprensiva del progetto
+├── PROJECT.md                    # Roadmap di sviluppo e specifiche storiche
+├── README.md                     # Guida rapida di installazione e avvio
+├── package.json                  # Dipendenze npm e script di esecuzione
+├── tsconfig.json                 # Configurazione del compilatore TypeScript
+├── next.config.ts                # Configurazione di Next.js
+└── vercel.json                   # Configurazione per il deploy Vercel
+
+
+--------------------------------------------------------------------------------
+9. GUIDA PER QUALSIASI AI O SVILUPPATORE (REGOLE DI MODIFICA)
+--------------------------------------------------------------------------------
+Se stai modificando questo progetto, rispetta scrupolosamente queste linee guida:
+
+1. Zero Dati Finti (No Placeholder):
+   Non inserire mai progetti inventati, aziende fantasma o testi "Lorem Ipsum".
+   Ogni dato deve rispecchiare esclusivamente le competenze reali e le attivita'
+   effettive di Gioele Rora.
+
+2. Lingua del Progetto:
+   - Tutti i testi visibili agli utenti sul sito (UI, schede, pulsanti, titoli)
+     devono essere rigorosamente in lingua INGLESE (`en`).
+   - La documentazione interna puo' essere in italiano o inglese.
+
+3. Come aggiungere un nuovo Progetto:
+   - Aggiungi un nuovo oggetto `ProjectItem` all'array `projectsData` in `src/data/projects.ts`.
+   - Inserisci eventuali screenshot nella cartella `public/projects/`.
+   - La pagina `/progetti/[slug]` e la scheda in `/progetti` verranno create
+     automaticamente alla build successiva grazie a `generateStaticParams`.
+
+4. Come aggiornare il Curriculum Vitae:
+   - Sostituisci il file PDF in `public/cv-gioele.pdf`.
+   - Aggiorna i dati testuali corrispondenti in `src/data/cv.ts` per mantenere
+     il CV web perfettamente allineato al PDF scaricabile.
+
+5. Come aggiornare competenze o bio:
+   - Modifica `src/data/skills.ts` o `src/data/profile.ts`.
+   - Tutti i componenti della Home Page e delle sottopagine attingono direttamente
+     da questi file dati.
+
+6. Flusso Git e Deploy:
+   - Esegui sempre `npm run build` prima di committare per verificare che non
+     ci siano errori TypeScript o di compilazione.
+   - Effettua commit atomici e descrittivi seguendo la convenzione Conventional Commits:
+     * `feat(...)`: nuova funzionalita' o contenuto.
+     * `fix(...)`: correzione di bug o refuso.
+     * `docs(...)`: aggiornamento della documentazione.
+     * `style(...)`: modifiche puramente estetiche o CSS.
+   - Il comando `git push origin main` avvia automaticamente il deploy su Vercel.
+
+
+--------------------------------------------------------------------------------
+10. COMANDI UTILI DI TERMINALE
+--------------------------------------------------------------------------------
+- Avvio server di sviluppo locale:
+  npm run dev
+  (Accessibile su: http://localhost:3000)
+
+- Compilazione e type-check di produzione:
+  npm run build
+
+- Controllo qualita' del codice (Lint):
+  npm run lint
+
+- Controllo dello stato Git:
+  git status
+  git diff
+
+================================================================================
+                    FINE DEL DOCUMENTO DI KNOWLEDGE BASE
+================================================================================
