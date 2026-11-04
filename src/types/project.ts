@@ -8,31 +8,6 @@ export type ProjectCategory =
   | "mobile-app"
   | "tool";
 
-export interface MetricCardData {
-  label: string;
-  value: string;
-  change?: string;
-  isPositive?: boolean;
-}
-
-export interface ChartDataPoint {
-  date: string;
-  value: number;
-  secondaryValue?: number;
-}
-
-export interface ProjectDashboardData {
-  title: string;
-  description: string;
-  kpis: MetricCardData[];
-  chartData: ChartDataPoint[];
-  recentLogs?: {
-    timestamp: string;
-    action: string;
-    status: "success" | "warning" | "info";
-  }[];
-}
-
 export interface ProjectScreenshot {
   url: string;
   title: string;
@@ -62,5 +37,4 @@ export interface ProjectItem {
     challenge: string;
     solution: string;
   }[];
-  dashboard?: ProjectDashboardData;
 }

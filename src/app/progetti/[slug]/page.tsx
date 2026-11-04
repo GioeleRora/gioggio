@@ -2,12 +2,11 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { ArrowLeft, ArrowUpRight, Layers, ShieldCheck, Sparkles, Cpu, Camera, Play } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Layers, ShieldCheck, Sparkles, Camera, Play } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
 import { projectsData } from "@/data/projects";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import { ProjectDashboardPreview } from "@/components/projects/ProjectDashboardPreview";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -141,22 +140,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           ))}
         </div>
       </div>
-
-      {/* Interactive Telemetry Dashboard if available */}
-      {project.dashboard && (
-        <div className="mb-16">
-          <div className="mb-4">
-            <h2 className="text-xl font-mono font-bold text-white flex items-center gap-2">
-              <Cpu className="w-5 h-5 text-cyan-400" />
-              <span>Interactive Telemetry & Sensor Feed</span>
-            </h2>
-            <p className="text-xs text-zinc-400 mt-1">
-              Explore real-time telemetry, RPC benchmarks, and simulated edge node metrics:
-            </p>
-          </div>
-          <ProjectDashboardPreview dashboard={project.dashboard} />
-        </div>
-      )}
 
       {/* Video Presentation & Live Pitch if available */}
       {project.videoUrl && (

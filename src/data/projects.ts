@@ -68,31 +68,6 @@ export const projectsData: ProjectItem[] = [
           "100% on-device edge processing: video frames are never stored or transmitted over the network, converting immediately into anonymous vector coordinates and aggregate counts.",
       },
     ],
-    dashboard: {
-      title: "EGG Telemetry & Sensor Mesh Feed",
-      description: "Edge processing performance and RPC bridge latency on Arduino UNO Q.",
-      kpis: [
-        { label: "RPC Bridge Latency", value: "< 7 ms", change: "Sub-10ms target", isPositive: true },
-        { label: "Hardware Unit Cost", value: "~€100", change: "-99% vs €15k sensors", isPositive: true },
-        { label: "Neural Model", value: "YOLOX-nano", change: "8MP IMX219", isPositive: true },
-        { label: "Privacy Status", value: "100% GDPR", change: "Zero video streamed", isPositive: true },
-      ],
-      chartData: [
-        { date: "00:00", value: 14, secondaryValue: 5 },
-        { date: "04:00", value: 6, secondaryValue: 6 },
-        { date: "08:00", value: 142, secondaryValue: 7 },
-        { date: "12:00", value: 189, secondaryValue: 6 },
-        { date: "16:00", value: 175, secondaryValue: 6 },
-        { date: "20:00", value: 98, secondaryValue: 5 },
-        { date: "23:59", value: 28, secondaryValue: 5 },
-      ],
-      recentLogs: [
-        { timestamp: "16:12:04", action: "I2C sensor bus sync completed (latency: 4.8ms)", status: "success" },
-        { timestamp: "16:11:45", action: "YOLOX-nano frame inferenced: 4 vehicles, 2 pedestrians detected", status: "info" },
-        { timestamp: "16:10:12", action: "RPC message dispatched to Docker bridge endpoint", status: "success" },
-        { timestamp: "16:08:50", action: "Live 3D web map alert telemetry refreshed", status: "info" },
-      ],
-    },
   },
   {
     slug: "tapout-alarm",
@@ -194,31 +169,6 @@ export const projectsData: ProjectItem[] = [
           "Implemented an ultra-lightweight AccessibilityService filtering exclusively on TYPE_WINDOW_STATE_CHANGED with pre-cached in-memory package lookups, strictly whitelisting core system UI and emergency dialers.",
       },
     ],
-    dashboard: {
-      title: "TapOut Telemetry & Hardware Engine",
-      description: "Live on-device metrics from physical testing: AudioGuard enforcement, hardware NFC disarm, and focus sessions.",
-      kpis: [
-        { label: "Active Wake Streak", value: "7 Days", change: "Record: 7G", isPositive: true },
-        { label: "Avg Response Speed", value: "16s", change: "Alarm to physical disarm", isPositive: true },
-        { label: "Total Focus Time", value: "3h 45m", change: "App blocker active", isPositive: true },
-        { label: "Hardware NFC Tag", value: "NTAG/Mifare", change: "UID 53:84:D8:83:B6:00:01", isPositive: true },
-      ],
-      chartData: [
-        { date: "Mon", value: 14, secondaryValue: 3.5 },
-        { date: "Tue", value: 19, secondaryValue: 4.0 },
-        { date: "Wed", value: 23, secondaryValue: 3.8 },
-        { date: "Thu", value: 16, secondaryValue: 3.75 },
-        { date: "Fri", value: 28, secondaryValue: 4.2 },
-        { date: "Sat", value: 12, secondaryValue: 2.5 },
-        { date: "Sun", value: 13, secondaryValue: 3.0 },
-      ],
-      recentLogs: [
-        { timestamp: "07:30:00", action: "Alarm triggered via AlarmManager.setAlarmClock() — AudioGuard 100% volume locked", status: "success" },
-        { timestamp: "07:30:16", action: "NFC ReaderMode: UID verified [53:84:D8:83:B6:00:01] — Alarm disarmed in 16s", status: "success" },
-        { timestamp: "07:30:17", action: "Room v5 WakeUpLog recorded: streak advanced to 7 consecutive days", status: "success" },
-        { timestamp: "17:19:00", action: "AppBlocker AccessibilityService: intercepted blocked package [com.supercell.clashroyale]", status: "warning" },
-      ],
-    },
   },
   {
     slug: "drone-delivery-simulator",

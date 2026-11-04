@@ -27,8 +27,8 @@ Obiettivi primari:
    firmware engineer in Team Astra, membro Team QubiTo).
 2. Showcase Tecnico Dettagliato: presentare progetti reali e verificabili
    (Edge-AI, simulazioni fisiche 3D, piattaforme web full-stack), corredati da
-   schede architetturali, sfide ingegneristiche risolte, gallerie screenshot
-   e dashboard di telemetria interattive.
+   schede architetturali, sfide ingegneristiche risolte, gallerie fotografiche e
+   screenshot autentici, video dimostrativi e repository ufficiali.
 3. Curriculum Vitae accessibile e scaricabile: versione web strutturata per
    lettura rapida, sincronizzata con il PDF ufficiale scaricabile in un clic
    (pubblicato in /public/cv-gioele.pdf) e ottimizzata per la stampa cartacea.
@@ -108,7 +108,7 @@ Il sito adotta un'architettura dati statica locale tipizzata (Local-First Static
 - Tutti i dati risiedono in file TypeScript dedicati all'interno di `src/data/`:
   * `src/data/profile.ts`: anagrafica, bio, contatti, link social, highlight.
   * `src/data/skills.ts`: competenze tecnologiche per categorie con livelli.
-  * `src/data/projects.ts`: schede complete, architettura, KPI e dashboard.
+  * `src/data/projects.ts`: schede complete, architettura, sfide tecniche, gallerie e repository.
   * `src/data/cv.ts`: esperienze lavorative, percorso accademico, certificazioni, lingue.
 - I tipi corrispondenti sono definiti rigorosamente in `src/types/`:
   * `src/types/profile.ts`
@@ -188,12 +188,12 @@ per una visione panoramica in 60 secondi, affiancata da sottopagine dedicate:
    - Catalogo completo dei progetti con barra di ricerca istantanea e filtri
      per categoria (Tutti, Edge-AI & Embedded, Simulazioni 3D, Applicazioni Web).
 
-3. Scheda Dettaglio Progetto & Dashboard (`/progetti/[slug]` — `src/app/progetti/[slug]/page.tsx`):
+3. Scheda Dettaglio Progetto (`/progetti/[slug]` — `src/app/progetti/[slug]/page.tsx`):
    - Generazione statica dinamica via `generateStaticParams`.
    - Scheda tecnica completa: problema affrontato, architettura software implementata,
-     sfide e soluzioni ingegneristiche, tag tecnologici e link alle demo.
-   - Galleria screenshot in alta definizione con didascalie tecniche.
-   - Dashboard Interattiva integrata con KPI cards, grafici temporali e log di sistema.
+     sfide e soluzioni ingegneristiche, tag tecnologici e link alle risorse ufficiali.
+   - Galleria fotografica e screenshot in alta definizione con didascalie tecniche.
+   - Embed video ufficiale (YouTube pitch/demo) e badge con link a Devpost e GitHub.
 
 4. Curriculum Vitae Web (`/cv` — `src/app/cv/page.tsx`):
    - Pagina completa e formattata per recruiter.
@@ -326,8 +326,7 @@ La cartella radice del progetto e' strutturata come segue:
 │   │   ├── layout/               # Elementi globali (Navbar.tsx, Footer.tsx)
 │   │   ├── home/                 # Sezioni Home (HeroSection, BentoAbout, TechStackGrid,
 │   │   │                         # FeaturedProjects, ExperienceTimeline)
-│   │   ├── projects/             # Componenti Progetti (ProjectCard, ProjectsDirectory,
-│   │   │                         # ProjectDashboardPreview)
+│   │   ├── projects/             # Componenti Progetti (ProjectCard, ProjectsDirectory)
 │   │   ├── cv/                   # Componenti CV (CvPrintButton.tsx)
 │   │   └── ui/                   # Primitive grafiche riutilizzabili (Badge, Button, Icons)
 │   │

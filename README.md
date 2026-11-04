@@ -17,21 +17,21 @@ src/
 │   ├── progetti/
 │   │   ├── page.tsx          # Archivio completo progetti con filtri per categoria e ricerca
 │   │   └── [slug]/
-│   │       └── page.tsx      # Scheda tecnica di dettaglio e Dashboard interattiva del progetto
+│   │       └── page.tsx      # Scheda tecnica di dettaglio del progetto con sfide e media
 │   └── cv/
 │       └── page.tsx          # Curriculum Vitae completo (visualizzazione, stampa e download PDF)
 │
 ├── components/               # Componenti React modulari
 │   ├── layout/               # Elementi strutturali globali (Navbar.tsx, Footer.tsx)
 │   ├── home/                 # Sezioni della Home Page (HeroSection, BentoAbout, TechStackGrid, ecc.)
-│   ├── projects/             # Componenti progetti (ProjectCard, ProjectsDirectory, ProjectDashboardPreview)
+│   ├── projects/             # Componenti progetti (ProjectCard, ProjectsDirectory)
 │   ├── cv/                   # Componenti CV (CvPrintButton)
 │   └── ui/                   # Primitive grafiche riutilizzabili (Badge, Button, Icons)
 │
 ├── data/                     # 📂 DATI LOCALI (Zero-cost, statici, compilati per Vercel)
 │   ├── profile.ts            # Dati personali, biografia, contatti, link social e status badge
 │   ├── skills.ts             # Competenze tecnologiche suddivise per categorie
-│   ├── projects.ts           # Dati dei progetti, schede tecniche e metriche delle dashboard
+│   ├── projects.ts           # Dati dei progetti, schede tecniche, gallerie e repository link
 │   └── cv.ts                 # Esperienze lavorative, istruzione, certificazioni e lingue
 │
 ├── types/                    # Definizioni TypeScript per type-safety totale

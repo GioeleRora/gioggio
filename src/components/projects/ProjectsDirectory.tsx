@@ -58,7 +58,7 @@ export function ProjectsDirectory({ projects }: ProjectsDirectoryProps) {
           <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none" />
           <input
             type="text"
-            placeholder="Cerca per nome o tecnologia..."
+            placeholder="Search by project name or technology..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full bg-zinc-950/80 border border-white/[0.08] rounded-xl pl-9 pr-4 py-2 text-xs font-mono text-zinc-100 placeholder:text-zinc-500 focus:outline-none focus:border-cyan-500/50 transition-colors"

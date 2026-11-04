@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Activity, ArrowRight, Play, Sparkles } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Play, Sparkles } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
 import { ProjectItem } from "@/types/project";
 import { Badge } from "@/components/ui/Badge";
@@ -16,16 +16,9 @@ export function ProjectCard({ project, featuredMode = false }: ProjectCardProps)
       <div>
         {/* Top Badges & Category */}
         <div className="flex items-center justify-between gap-2 mb-4">
-          <Badge variant={project.dashboard ? "cyan" : "neutral"} size="sm">
+          <Badge variant="neutral" size="sm">
             {project.categoryLabel}
           </Badge>
-
-          {project.dashboard && (
-            <span className="inline-flex items-center gap-1 text-[11px] font-mono text-cyan-400">
-              <Activity className="w-3.5 h-3.5" />
-              <span>Telemetry Demo</span>
-            </span>
-          )}
         </div>
 
         {/* Project Thumbnail Image if present */}
