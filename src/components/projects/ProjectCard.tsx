@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Activity, ArrowRight } from "lucide-react";
+import { ArrowUpRight, Activity, ArrowRight, Play } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
 import { ProjectItem } from "@/types/project";
 import { Badge } from "@/components/ui/Badge";
@@ -112,6 +112,18 @@ export function ProjectCard({ project, featuredMode = false }: ProjectCardProps)
             >
               <span>Live Demo</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
+          )}
+          {project.videoUrl && (
+            <a
+              href={project.videoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-zinc-400 hover:text-cyan-400 transition-colors"
+              title="Watch Video Presentation"
+            >
+              <Play className="w-3.5 h-3.5 fill-current" />
+              <span>Video</span>
             </a>
           )}
         </div>

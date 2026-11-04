@@ -228,6 +228,11 @@ per una visione panoramica in 60 secondi, affiancata da sottopagine dedicate:
      * Costo Hardware: ~€100 (-99% rispetto ai sensori tradizionali)
      * Modello Neurale: YOLOX-nano su IMX219
      * Privacy: 100% GDPR Compliant (Zero video streamed)
+   - Video Pitch & Demo: https://youtu.be/gVzeYpoJ9_o?si=tZUxdF2cDVS-mbpG ("INTRODUCING EGG - CROSSING CHICKENS")
+   - Asset Grafici:
+     * `/projects/egg-banner.png`: Banner composite 16:9 con prototipo ed evento di premiazione
+     * `/projects/egg/egg-prototype.jpg`: Prototipo fisico dell'involucro aerodinamico stampato in 3D
+     * `/projects/egg/egg-hackturin-award.jpg`: Premiazione del 1° posto sul palco al Centro Congressi Unione Industriali di Torino
 
 2. TapOut – Commercial-Grade Unstoppable Alarm & Physical App Blocker
    - Slug: `tapout-alarm`

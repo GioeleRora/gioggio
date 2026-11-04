@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { ArrowLeft, ArrowUpRight, Layers, ShieldCheck, Sparkles, Cpu, Camera } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Layers, ShieldCheck, Sparkles, Cpu, Camera, Play } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
 import { projectsData } from "@/data/projects";
 import { Badge } from "@/components/ui/Badge";
@@ -33,6 +33,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${project.title} | Gioele Rora`,
     description: project.summary,
   };
+}
+
+function getYouTubeEmbedUrl(url: string): string {
+  const shortMatch = url.match(/youtu\.be\/([a-zA-Z0-9_-]+)/);
+  if (shortMatch && shortMatch[1]) {
+    return `https://www.youtube-nocookie.com/embed/${shortMatch[1]}`;
+  }
+  const fullMatch = url.match(/[?&]v=([a-zA-Z0-9_-]+)/);
+  if (fullMatch && fullMatch[1]) {
+    return `https://www.youtube-nocookie.com/embed/${fullMatch[1]}`;
+  }
+  return url;
 }
 
 export default async function ProjectDetailPage({ params }: PageProps) {
@@ -86,6 +98,13 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </Button>
           )}
 
+          {project.videoUrl && (
+            <Button href={project.videoUrl} external variant="outline" size="md">
+              <Play className="w-4 h-4 fill-current text-rose-500" />
+              <span>Watch Video Pitch</span>
+            </Button>
+          )}
+
           {project.repoUrl && (
             <Button href={project.repoUrl} external variant="outline" size="md">
               <GithubIcon className="w-4 h-4" />
@@ -123,6 +142,33 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </div>
       )}
 
+      {/* Video Presentation & Live Pitch if available */}
+      {project.videoUrl && (
+        <div className="mb-16">
+          <div className="mb-4">
+            <h2 className="text-xl font-mono font-bold text-white flex items-center gap-2">
+              <Play className="w-5 h-5 text-cyan-400 fill-cyan-400/20" />
+              <span>Video Presentation & Live Pitch</span>
+            </h2>
+            <p className="text-xs text-zinc-400 mt-1">
+              Watch the official project pitch, system demonstration, and live testing:
+            </p>
+          </div>
+
+          <div className="bento-card rounded-2xl p-3 sm:p-4 border border-white/[0.08] overflow-hidden">
+            <div className="relative aspect-video w-full rounded-xl overflow-hidden bg-zinc-950 border border-white/[0.04]">
+              <iframe
+                src={getYouTubeEmbedUrl(project.videoUrl)}
+                title={`${project.title} Video Presentation`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full border-0"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Visual Interface & System Captures if available */}
       {project.screenshots && project.screenshots.length > 0 && (
         <div className="mb-16">
@@ -139,7 +185,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <div
             className={`grid gap-6 ${
               project.screenshotAspect === "portrait"
-                ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+                ? project.screenshots.length === 2
+                  ? "grid-cols-1 sm:grid-cols-2 max-w-3xl mx-auto"
+                  : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
                 : project.screenshots.length === 1
                 ? "grid-cols-1"
                 : "grid-cols-1 md:grid-cols-2"
@@ -161,7 +209,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 <div
                   className={`relative w-full rounded-xl overflow-hidden bg-zinc-950 border border-white/[0.08] mb-4 ${
                     project.screenshotAspect === "portrait"
-                      ? "aspect-[620/1386]"
+                      ? project.slug === "tapout-alarm"
+                        ? "aspect-[620/1386]"
+                        : "aspect-[9/16]"
                       : "aspect-[16/10]"
                   }`}
                 >
@@ -171,7 +221,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                     fill
                     sizes={
                       project.screenshotAspect === "portrait"
-                        ? "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
+                        ? project.screenshots && project.screenshots.length <= 2
+                          ? "(max-width: 640px) 100vw, 450px"
+                          : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
                         : "(max-width: 768px) 100vw, 900px"
                     }
                     className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"

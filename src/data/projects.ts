@@ -12,6 +12,21 @@ export const projectsData: ProjectItem[] = [
     categoryLabel: "Edge-AI & Embedded",
     featured: true,
     order: 1,
+    videoUrl: "https://youtu.be/gVzeYpoJ9_o?si=tZUxdF2cDVS-mbpG",
+    thumbnailUrl: "/projects/egg-banner.png",
+    screenshotAspect: "portrait",
+    screenshots: [
+      {
+        url: "/projects/egg/egg-prototype.jpg",
+        title: "Physical 3D-Printed Enclosure Prototype",
+        caption: "Aerodynamic egg enclosure engineered and 3D-printed to house the dual-core Arduino UNO Q microcontroller, 8MP IMX219 sensor, and custom I2C telemetry bus.",
+      },
+      {
+        url: "/projects/egg/egg-hackturin-award.jpg",
+        title: "1st Place Award Ceremony @ HackTurin",
+        caption: "Team award presentation at Centro Congressi Unione Industriali di Torino, securing 1st Place overall with the functional EGG smart city mesh prototype.",
+      },
+    ],
     tags: [
       "C++",
       "Python",

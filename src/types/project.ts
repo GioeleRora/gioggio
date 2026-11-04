@@ -51,6 +51,7 @@ export interface ProjectItem {
   tags: string[];
   liveUrl?: string;
   repoUrl?: string;
+  videoUrl?: string;
   thumbnailUrl?: string;
   screenshots?: ProjectScreenshot[];
   screenshotAspect?: "portrait" | "landscape";

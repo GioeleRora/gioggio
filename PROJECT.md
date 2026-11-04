@@ -116,6 +116,7 @@ Sezioni che hanno bisogno di respiro e non appesantiscono la Home:
 - [x] **Fase 10:** Perfezionamento Bio accademica / team universitari, inserimento del Web Development in Active Technical Focus ed estensione del pattern a griglia tecnologica e luci ambientali a tutte le sezioni della Home.
 - [x] **Fase 11:** Creazione del documento di riferimento globale `PROJECT_OVERVIEW.txt` contenente l'intera architettura, stack, dati reali, mappe delle cartelle e linee guida operative per qualsiasi intelligenza artificiale o sviluppatore.
 - [x] **Fase 12:** Integrazione del progetto reale "TapOut – Commercial-Grade Unstoppable Alarm & Physical App Blocker" (Kotlin, Jetpack Compose, ML Kit Pose Detection on-device, NFC ReaderMode, AppBlocker AccessibilityService, Room v5). Copia dei 6 screenshot portrait in `/public/projects/tapout/`, generazione banner composite 16:9 (`tapout-banner.png`), supporto `screenshotAspect: "portrait"` per galleria mobile a 3 colonne, aggiornamento filtri e arricchimento competenze Android/Kotlin.
+- [x] **Fase 13:** Integrazione video pitch e foto reali per il progetto EGG (1° posto HackTurin). Supporto per `videoUrl` con player embed YouTube responsive e pulsante dedicato; aggiunti gli asset fotografici del prototipo 3D reale e della cerimonia di premiazione al Centro Congressi Unione Industriali di Torino, con generazione banner composite 16:9 (`/projects/egg-banner.png`).
 
 
 
