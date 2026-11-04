@@ -98,6 +98,13 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </Button>
           )}
 
+          {project.devpostUrl && (
+            <Button href={project.devpostUrl} external variant="outline" size="md">
+              <Sparkles className="w-4 h-4 text-cyan-400" />
+              <span>Devpost Submission</span>
+            </Button>
+          )}
+
           {project.videoUrl && (
             <Button href={project.videoUrl} external variant="outline" size="md">
               <Play className="w-4 h-4 fill-current text-rose-500" />
@@ -105,11 +112,20 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </Button>
           )}
 
-          {project.repoUrl && (
-            <Button href={project.repoUrl} external variant="outline" size="md">
-              <GithubIcon className="w-4 h-4" />
-              <span>GitHub Repository</span>
-            </Button>
+          {project.repoUrls && project.repoUrls.length > 0 ? (
+            project.repoUrls.map((repo, idx) => (
+              <Button key={idx} href={repo.url} external variant="outline" size="md">
+                <GithubIcon className="w-4 h-4" />
+                <span>GitHub: {repo.label}</span>
+              </Button>
+            ))
+          ) : (
+            project.repoUrl && (
+              <Button href={project.repoUrl} external variant="outline" size="md">
+                <GithubIcon className="w-4 h-4" />
+                <span>GitHub Repository</span>
+              </Button>
+            )
           )}
         </div>
 

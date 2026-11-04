@@ -51,6 +51,8 @@ export interface ProjectItem {
   tags: string[];
   liveUrl?: string;
   repoUrl?: string;
+  repoUrls?: { label: string; url: string }[];
+  devpostUrl?: string;
   videoUrl?: string;
   thumbnailUrl?: string;
   screenshots?: ProjectScreenshot[];

@@ -228,7 +228,11 @@ per una visione panoramica in 60 secondi, affiancata da sottopagine dedicate:
      * Costo Hardware: ~€100 (-99% rispetto ai sensori tradizionali)
      * Modello Neurale: YOLOX-nano su IMX219
      * Privacy: 100% GDPR Compliant (Zero video streamed)
-   - Video Pitch & Demo: https://youtu.be/gVzeYpoJ9_o?si=tZUxdF2cDVS-mbpG ("INTRODUCING EGG - CROSSING CHICKENS")
+   - Link Ufficiali & Repository:
+     * Devpost Submission: https://devpost.com/software/egg-8famel
+     * Video Pitch & Demo (YouTube): https://www.youtube.com/watch?v=gVzeYpoJ9_o ("INTRODUCING EGG - CROSSING CHICKENS")
+     * GitHub (Firmware & Edge Node): https://github.com/AlpMeteSenel/crossing-chickens
+     * GitHub (3D Web Dashboard): https://github.com/AlpMeteSenel/egg-dashboard
    - Asset Grafici:
      * `/projects/egg-banner.png`: Banner composite 16:9 con prototipo ed evento di premiazione
      * `/projects/egg/egg-prototype.jpg`: Prototipo fisico dell'involucro aerodinamico stampato in 3D

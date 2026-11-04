@@ -12,7 +12,19 @@ export const projectsData: ProjectItem[] = [
     categoryLabel: "Edge-AI & Embedded",
     featured: true,
     order: 1,
+    devpostUrl: "https://devpost.com/software/egg-8famel",
     videoUrl: "https://youtu.be/gVzeYpoJ9_o?si=tZUxdF2cDVS-mbpG",
+    repoUrl: "https://github.com/AlpMeteSenel/crossing-chickens",
+    repoUrls: [
+      {
+        label: "Edge Node & Firmware",
+        url: "https://github.com/AlpMeteSenel/crossing-chickens",
+      },
+      {
+        label: "3D Web Dashboard",
+        url: "https://github.com/AlpMeteSenel/egg-dashboard",
+      },
+    ],
     thumbnailUrl: "/projects/egg-banner.png",
     screenshotAspect: "portrait",
     screenshots: [

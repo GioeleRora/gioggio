@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Activity, ArrowRight, Play } from "lucide-react";
+import { ArrowUpRight, Activity, ArrowRight, Play, Sparkles } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
 import { ProjectItem } from "@/types/project";
 import { Badge } from "@/components/ui/Badge";
@@ -100,6 +100,18 @@ export function ProjectCard({ project, featuredMode = false }: ProjectCardProps)
             >
               <GithubIcon className="w-4 h-4" />
               <span>Source</span>
+            </a>
+          )}
+          {project.devpostUrl && (
+            <a
+              href={project.devpostUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-zinc-400 hover:text-cyan-400 transition-colors"
+              title="Devpost Submission"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Devpost</span>
             </a>
           )}
           {project.liveUrl && (
