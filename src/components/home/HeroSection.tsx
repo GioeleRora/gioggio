@@ -80,9 +80,9 @@ export function HeroSection() {
                 <ArrowDown className="w-4 h-4" />
               </Button>
 
-              <Button href="/cv-gioele.pdf" external download size="lg" variant="outline">
+              <Button href="/cv" size="lg" variant="outline">
                 <Download className="w-4 h-4 text-cyan-400" />
-                <span>Download Resume (PDF)</span>
+                <span>View & Download CV</span>
               </Button>
             </div>
 

@@ -9,15 +9,15 @@ export const cvData: CvData = {
       role: "Embedded Firmware Engineer — IT Division (Spherical Lunar Rover)",
       company: "Team Astra — Politecnico di Torino",
       location: "Turin, Italy",
-      period: "Sept. 2024 — Present",
-      current: true,
+      period: "Sept. 2024 — Sept. 2026",
+      current: false,
       description:
-        "Collaborating in the IT division for an autonomous spherical lunar exploration rover powered by internal pendulum motion and robotic arm manipulation.",
+        "Developed bare-metal C firmware on an STM32 microcontroller for an autonomous spherical lunar rover, implementing PWM DC motor control and I2C environmental sensor acquisition.",
       achievements: [
-        "Developing, profiling, and testing embedded C/C++ firmware for DC motor velocity regulation, PWM control, and environmental temperature sensor integration.",
-        "Optimizing and refactoring motor management driver libraries for resource-constrained microcontrollers; successfully validated actuation systems for public technical exhibitions.",
+        "Built hardware-to-software telemetry data flows passing real-time sensor readings from the microcontroller up to the frontend monitoring interface.",
+        "Brought the rover's motor actuation from a minimal prototype codebase to reliable, repeatable operation under a tight deadline for public technical exhibitions.",
       ],
-      technologies: ["C", "C++", "Embedded Firmware", "STM32", "PWM Control", "DC Motors", "I2C/SPI"],
+      technologies: ["C", "C++", "Embedded Firmware", "STM32", "PWM Control", "DC Motors", "I2C"],
     },
     {
       role: "Independent STEM Private Tutor",

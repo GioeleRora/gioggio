@@ -46,9 +46,9 @@ export function Navbar() {
 
         {/* Single Primary Action: Resume */}
         <div className="hidden sm:flex items-center gap-3">
-          <Button href="/cv-gioele.pdf" external download size="sm" variant="outline">
+          <Button href="/cv" size="sm" variant="outline">
             <FileDown className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Resume (PDF)</span>
+            <span>View Resume</span>
           </Button>
         </div>
 
@@ -80,15 +80,14 @@ export function Navbar() {
 
           <div className="pt-2 border-t border-white/[0.08]">
             <Button
-              href="/cv-gioele.pdf"
-              external
-              download
+              href="/cv"
+              onClick={() => setMobileMenuOpen(false)}
               size="sm"
               variant="outline"
               className="w-full justify-center"
             >
               <FileDown className="w-4 h-4 text-cyan-400" />
-              <span>Download Resume (PDF)</span>
+              <span>View & Download Resume</span>
             </Button>
           </div>
         </div>

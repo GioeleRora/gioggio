@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Download, Briefcase, GraduationCap, Award, Globe, Mail, MapPin, ArrowLeft, Phone } from "lucide-react";
+import { Download, Briefcase, GraduationCap, Award, Globe, Mail, MapPin, ArrowLeft, Phone, ExternalLink, FileText } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { cvData } from "@/data/cv";
@@ -42,6 +42,11 @@ export default function CvPage() {
 
         {/* Action Buttons */}
         <div className="flex flex-wrap items-center gap-2.5">
+          <Button href={cvData.pdfDownloadUrl} external size="md" variant="outline">
+            <ExternalLink className="w-4 h-4 text-cyan-400" />
+            <span>Open PDF</span>
+          </Button>
+
           <Button href={cvData.pdfDownloadUrl} external download size="md" variant="primary">
             <Download className="w-4 h-4" />
             <span>Download PDF</span>
@@ -50,6 +55,54 @@ export default function CvPage() {
           <CvPrintButton />
         </div>
       </div>
+
+      {/* Embedded Official PDF Viewer */}
+      <section className="mb-12">
+        <div className="flex items-center justify-between gap-4 mb-4">
+          <h2 className="text-sm font-mono uppercase tracking-wider text-cyan-400 font-semibold flex items-center gap-2">
+            <FileText className="w-4 h-4" />
+            <span>{"// Official PDF Preview"}</span>
+          </h2>
+          <a
+            href={cvData.pdfDownloadUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs font-mono text-zinc-400 hover:text-cyan-400 transition-colors"
+          >
+            <span>Open full screen</span>
+            <ExternalLink className="w-3.5 h-3.5" />
+          </a>
+        </div>
+        <div className="bento-card rounded-2xl overflow-hidden border border-white/[0.08] bg-zinc-950/90">
+          <iframe
+            src={`${cvData.pdfDownloadUrl}#view=FitH`}
+            title="Gioele Rora Curriculum Vitae PDF"
+            className="w-full h-[650px] sm:h-[850px] border-0"
+          />
+          <div className="px-4 py-3 border-t border-white/[0.06] flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-zinc-400 bg-zinc-950/60">
+            <span>Previewing cv-gioele.pdf directly in browser</span>
+            <div className="flex items-center gap-4">
+              <a
+                href={cvData.pdfDownloadUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:underline inline-flex items-center gap-1"
+              >
+                <span>Open in new tab</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+              <a
+                href={cvData.pdfDownloadUrl}
+                download
+                className="text-emerald-400 hover:underline inline-flex items-center gap-1"
+              >
+                <span>Download PDF</span>
+                <Download className="w-3 h-3" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CV Contact & Meta strip */}
       <div className="bento-card rounded-2xl p-6 mb-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs font-mono text-zinc-300">

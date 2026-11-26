@@ -20,10 +20,10 @@ export function ExperienceTimeline() {
           </p>
         </div>
 
-        {/* Single clean PDF button */}
-        <Button href="/cv-gioele.pdf" external download variant="outline" size="md">
+        {/* Single clean Resume button */}
+        <Button href="/cv" variant="outline" size="md">
           <Download className="w-4 h-4 text-cyan-400" />
-          <span>Download Resume (PDF)</span>
+          <span>View & Download CV</span>
         </Button>
       </div>
 
