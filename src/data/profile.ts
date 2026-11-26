@@ -11,10 +11,10 @@ export const profileData: ProfileData = {
     available: true,
   },
   shortBio:
-    "Passionate about embedded systems engineering, aerospace robotics, quantum computing, and game physics simulation.",
+    "Passionate about embedded systems engineering, aerospace robotics, Edge-AI, and game physics simulation.",
   fullBio: [
     "I am an undergraduate Computer Engineering student at Politecnico di Torino, studying in a curriculum taught entirely in English, and a member of the Mu Nu Chapter of IEEE-Eta Kappa Nu (IEEE-HKN) Honor Society.",
-    "I actively contribute to university engineering student teams: Team Astra (IT Division, developing embedded C firmware for an autonomous spherical lunar rover) and Team QubiTo (Politecnico di Torino's quantum computing student team).",
+    "I actively contribute to university engineering student teams, notably Team Astra (IT Division, developing embedded C firmware for an autonomous spherical lunar rover).",
     "I led the team that won 1st Place at HackTurin with the EGG project (Edge-AI Traffic Mesh Network) and continuously engineer complex technical systems spanning embedded firmware, Agentic AI architectures, Unity 3D physics engines, and modern full-stack software platforms.",
   ],
   location: "Turin, Italy",

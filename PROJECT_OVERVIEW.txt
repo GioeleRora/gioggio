@@ -24,7 +24,7 @@ e colleghi sviluppatori.
 Obiettivi primari:
 1. Personal Branding ad alto impatto visivo e tecnico: rappresentare l'identita'
    di Gioele (Ingegneria Informatica al Politecnico di Torino, membro IEEE-HKN,
-   firmware engineer in Team Astra, membro Team QubiTo).
+   firmware engineer in Team Astra).
 2. Showcase Tecnico Dettagliato: presentare progetti reali e verificabili
    (Edge-AI, simulazioni fisiche 3D, piattaforme web full-stack), corredati da
    schede architetturali, sfide ingegneristiche risolte, gallerie fotografiche e
@@ -63,10 +63,6 @@ Obiettivi primari:
      Focus: Sviluppo firmware C/C++ su microcontrollori STM32 per rover lunare
      sferico a propulsione interna a pendolo e braccio robotico (controllo PWM,
      regolazione velocita' motori DC, bus sensori ambientali I2C/SPI).
-  2. Team QubiTo (Politecnico di Torino) — Ottobre 2026 - Presente:
-     Ruolo: Software Division Member.
-     Focus: Quantum computing, algoritmi quantistici, paradigmi di
-     ottimizzazione di circuiti quantistici e benchmark di simulazione.
 - Attivita' di Leadership & Volontariato:
   * Capo Reparto Scout AGESCI (Alba): coordinamento educativo di oltre 30 ragazzi,
     gestione logistica e sicurezza per eventi e percorsi escursionistici nazionali.
@@ -168,7 +164,7 @@ per una visione panoramica in 60 secondi, affiancata da sottopagine dedicate:
        Headline principale, breve bio, pulsanti CTA "View Technical Projects" e
        "Download Resume (PDF)", barra metrica PoliTo / IEEE-HKN / HackTurin.
    - BentoAbout (`src/components/home/BentoAbout.tsx`):
-     * Card 1: Background accademico, appartenenza ai team Astra e QubiTo, 3 pilastri core.
+     * Card 1: Background accademico, appartenenza al Team Astra, 3 pilastri core.
      * Card 2: Active Technical Focus (Firmware C/C++, Web Dev, Agentic AI, Motori DC).
      * Card 3: Formazione e appartenenza a IEEE-HKN Mu Nu Chapter.
    - TechStackGrid (`src/components/home/TechStackGrid.tsx`):

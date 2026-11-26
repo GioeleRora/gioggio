@@ -3,7 +3,7 @@ import { CvData } from "@/types/cv";
 export const cvData: CvData = {
   pdfDownloadUrl: "/cv-gioele.pdf",
   summary:
-    "B.Sc. in Computer Engineering student at Politecnico di Torino (taught 100% in English) and selected member of the IEEE-Eta Kappa Nu (IEEE-HKN, Mu Nu Chapter) Honor Society. Active embedded firmware engineer in Team Astra (autonomous spherical lunar rover), software division member in Team QubiTo (quantum computing), and 1st place winner at HackTurin with the EGG Edge-AI mesh project.",
+    "B.Sc. in Computer Engineering student at Politecnico di Torino (taught 100% in English) and selected member of the IEEE-Eta Kappa Nu (IEEE-HKN, Mu Nu Chapter) Honor Society. Active embedded firmware engineer in Team Astra (autonomous spherical lunar rover) and 1st place winner at HackTurin with the EGG Edge-AI mesh project.",
   workExperiences: [
     {
       role: "Embedded Firmware Engineer — IT Division (Spherical Lunar Rover)",
@@ -18,19 +18,6 @@ export const cvData: CvData = {
         "Optimizing and refactoring motor management driver libraries for resource-constrained microcontrollers; successfully validated actuation systems for public technical exhibitions.",
       ],
       technologies: ["C", "C++", "Embedded Firmware", "STM32", "PWM Control", "DC Motors", "I2C/SPI"],
-    },
-    {
-      role: "Software Division Member — Quantum Computing Student Team",
-      company: "Team QubiTo — Politecnico di Torino",
-      location: "Turin, Italy",
-      period: "Oct. 2026 — Present",
-      current: true,
-      description:
-        "Contributing to quantum computing exploration, algorithm design, circuit optimization paradigms, and simulation benchmarks within the university student team.",
-      achievements: [
-        "Collaborating on quantum algorithm design, exploring quantum circuit optimization paradigms and simulation benchmarks.",
-      ],
-      technologies: ["Python", "Quantum Computing", "Circuit Optimization", "Simulation Benchmarks"],
     },
     {
       role: "Independent STEM Private Tutor",

@@ -16,7 +16,7 @@ export function ExperienceTimeline() {
             Engineering Teams & Background
           </h2>
           <p className="text-zinc-400 mt-2 max-w-xl text-sm sm:text-base">
-            Student space robotics, quantum algorithms research, academics at Politecnico di Torino, and leadership.
+            Student space robotics, embedded systems engineering, academics at Politecnico di Torino, and leadership.
           </p>
         </div>
 

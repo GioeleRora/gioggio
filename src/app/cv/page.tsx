@@ -11,7 +11,7 @@ import { LinkedinIcon } from "@/components/ui/Icons";
 export const metadata: Metadata = {
   title: "Curriculum Vitae | Gioele Rora",
   description:
-    "Curriculum Vitae of Gioele Rora: B.Sc. Computer Engineering @ Politecnico di Torino, IEEE-HKN, Team Astra and Team QubiTo.",
+    "Curriculum Vitae of Gioele Rora: B.Sc. Computer Engineering @ Politecnico di Torino, IEEE-HKN, and Team Astra.",
 };
 
 export default function CvPage() {
